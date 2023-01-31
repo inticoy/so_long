@@ -6,13 +6,14 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 14:15:16 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/01/31 17:35:21 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "libft.h"
 #include "mlx.h"
+#include <math.h>
 
 void	draw_map(t_game g)
 {
@@ -26,22 +27,15 @@ void	draw_map(t_game g)
 		x = 0;
 		while (x < g.map.size.x)
 		{
-			mlx_put_image_to_window(g.mlx, g.win, g.assets.block[0].img, x * 32, y * 32);
+			mlx_put_image_to_window(g.mlx, g.win, g.assets.block[0].img, x * SIZE_X, y * SIZE_Y);
 			i = 0;
 			if (g.map.map[y][x] == '1')
 				i = 3;
 			else if (g.map.map[y][x] == 'C')
-			{
-				if ((g.frame / 8) % 6 == 0 || (g.frame / 8) % 6 == 5)
-					i = 10;
-				else if ((g.frame / 8) % 6 == 1 || (g.frame / 8) % 6 == 4)
-					i = 11;
-				else if ((g.frame / 8) % 6 == 2 || (g.frame / 8) % 6 == 3)
-					i = 12;
-			}
+				i = 9 + (pow((5 - (g.frame / 8) % 6), 2) + pow(((g.frame / 8) % 6), 2)) / 8;
 			else if (g.map.map[y][x] == '2')
 				i = 13;
-			mlx_put_image_to_window(g.mlx, g.win, g.assets.block[i].img, x * 32, y * 32);
+			mlx_put_image_to_window(g.mlx, g.win, g.assets.block[i].img, x * SIZE_X, y * SIZE_Y);
 			x++;
 		}
 		y++;
