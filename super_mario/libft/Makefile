@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/01/02 16:40:30 by gyoon            ###   ########.fr        #
+#    Created: 2023/01/25 16:44:08 by gyoon             #+#    #+#              #
+#    Updated: 2023/01/25 22:15:26 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,56 +16,47 @@ CC = cc
 AR = ar
 RM = rm -rf
 
+ARFLAGS = -rcs
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_printf.c \
-	convert/convert_padding.c convert/convert_precision.c convert/convert_prefix.c convert/convert_sign.c convert/convert_space.c \
-	flag/init_flag.c flag/need_padding.c flag/need_precision.c flag/need_prefix.c flag/need_sign.c flag/need_space.c flag/update_flag.c \
-	format/get_formatf.c format/init_format.c format/is_num_format.c format/is_str_format.c \
-	string/ft_tstrjoin.c string/get_tstr_auto.c string/get_tstr.c string/get_tstrf.c \
-	tostring/ft_ctoa.c tostring/ft_ptoa.c tostring/ft_utoa.c tostring/ft_vtoa.c tostring/ft_xtoa.c \
-	utils/ft_free_s.c utils/ft_strtoupper.c \
-	gnl/get_next_line.c gnl/get_next_line_utils.c
+SRCS = $(addprefix src/, ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
+		ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
+		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
+		ft_atoi.c ft_calloc.c ft_strdup.c \
+		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
+		ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+		get_next_line.c get_next_line_utils.c \
+		ft_printf.c \
+		convert_padding.c convert_precision.c convert_prefix.c convert_sign.c convert_space.c \
+		init_flag.c need_padding.c need_precision.c need_prefix.c need_sign.c need_space.c update_flag.c \
+		get_formatf.c init_format.c is_num_format.c is_str_format.c \
+		ft_tstrjoin.c get_tstr_auto.c get_tstr.c get_tstrf.c \
+		ft_ctoa.c ft_ptoa.c ft_utoa.c ft_vtoa.c ft_xtoa.c \
+		ft_free_s.c ft_strtoupper.c)
+		
 OBJS = $(SRCS:.c=.o)
-
-B_SRCS = ${SRCS:.c=_bonus.c}
-B_OBJS = ${OBJS:.o=_bonus.o}
-
-LIBFT = libft/libft.a
-
-ifdef BONUS
-    F_OBJS = $(B_OBJS)
-else
-    F_OBJS = $(OBJS)
-endif
 
 all : $(NAME)
 
-$(NAME) : $(LIBFT) $(F_OBJS)
-	cp $(LIBFT) $@
-	$(AR) -rc $@ $(F_OBJS)
-
-bonus : 
-	make BONUS=1 all
-
-$(LIBFT) :
-	make -C libft all
+$(NAME) : $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@ -I. -I libft -I gnl
+	$(CC) $(CFLAGS) -c $< -o $@ -I include
 
 clean :
 	$(RM) $(OBJS)
-	$(RM) $(B_OBJS)
-	make -C libft clean
 
 fclean :
 	make clean
 	$(RM) $(NAME)
-	make -C libft fclean
 
 re :
 	make fclean
 	make all
 
-.PHONY : all bonus clean fclean re
+.PHONY : all clean fclean re .c.o
