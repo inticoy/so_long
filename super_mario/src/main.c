@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_game.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 14:26:47 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 16:02:11 by gyoon            ###   ########.fr       */
+/*   Created: 2023/01/02 15:38:06 by gyoon             #+#    #+#             */
+/*   Updated: 2023/01/31 16:16:59 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "mlx.h"
 
-t_game	init_game(char *map_path)
+int	main(int argc, char **argv)
 {
 	t_game	g;
 
-	g.frame = 0;
-	g.mlx = mlx_init();
-	g.map = read_map(map_path);
-	g.player = init_player(g.map);
-	g.assets = read_assets(g.mlx);
-	g.size = init_point(2, 32 * g.map.size.x, 32 * g.map.size.y, -1);
-	g.win = mlx_new_window(g.mlx, g.size.x, g.size.y, TITLE);
-	g.key = init_key();
-	return (g);
+	if (argc != 2)
+		raise_error("Execution must be './so_long [map PATH]'\n");
+	g = init_game(argv[1]);
+	mlx_hook(g.win, E_KEY_PRESS, M_KEY_PRESS, hook_key_press, &g);
+	mlx_hook(g.win, E_KEY_RELEASE, M_KEY_RELEASE, hook_key_release, &g);
+	mlx_loop_hook(g.mlx, hook_loop, &g);
+	mlx_loop(g.mlx);
+	return (0);
 }

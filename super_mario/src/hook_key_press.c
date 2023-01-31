@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:34:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 14:15:16 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/01/31 16:14:42 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ int	hook_key_press(int keycode, t_game *game)
 		game->key.press_shift = ft_true;
 	else if (keycode == KEY_ESC)
 		game->key.press_esc = ft_true;
-	ft_printf("pressed : %d\n", keycode);
 	return (0);
 }

@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   close_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/02 15:38:06 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 14:19:45 by gyoon            ###   ########.fr       */
+/*   Created: 2023/01/31 16:25:18 by gyoon             #+#    #+#             */
+/*   Updated: 2023/01/31 16:25:47 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "mlx.h"
+#include <stdlib.h>
 
-int	main(int argc, char **argv)
+void	close_game(t_game *g)
 {
-	t_game	g;
-
-	g = init_game();
-	mlx_hook(g.win, E_KEY_PRESS, M_KEY_PRESS, hook_key_press, &g);
-	mlx_hook(g.win, E_KEY_RELEASE, M_KEY_RELEASE, hook_key_release, &g);
-	mlx_loop_hook(g.mlx, hook_loop, &g);
-	mlx_loop(g.mlx);
-	return (0);
+	exit(1);
 }

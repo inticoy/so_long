@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:49:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 14:15:16 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/01/31 16:26:14 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,8 @@ static void	block_y(t_game *g)
 
 int	hook_loop(t_game *g)
 {
+	if (g->key.press_esc)
+		close_game(g);
 	g->frame++;
 	acceleration_x(g);
 	g->player.v.x += g->player.a.x;
