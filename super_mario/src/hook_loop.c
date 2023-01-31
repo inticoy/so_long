@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   hook_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:49:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/10 20:15:28 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/01/31 14:15:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "ft_printf.h"
+#include "libft.h"
 
 static void	acceleration_x(t_game *g)
 {

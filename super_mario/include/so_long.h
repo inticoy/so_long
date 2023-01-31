@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/14 01:35:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/01/31 14:15:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #  define FT_NULL (void *)0
 # endif
 
-# include "ft_printf.h"
+# include "libft.h"
 
 # define TITLE "Super Mario Bros."
 # define E_KEY_PRESS 2

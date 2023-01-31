@@ -6,12 +6,12 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:34:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/05 15:36:43 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/01/31 14:15:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "ft_printf.h"
+#include "libft.h"
 
 int	hook_key_press(int keycode, t_game *game)
 {

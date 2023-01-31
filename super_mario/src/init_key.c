@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   init_key.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/02 15:38:06 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/09 22:41:08 by gyoon            ###   ########.fr       */
+/*   Created: 2023/01/05 15:26:42 by gyoon             #+#    #+#             */
+/*   Updated: 2023/01/31 14:15:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "mlx.h"
+#include "libft.h"
 
-int	main(void)
+t_key	init_key(void)
 {
-	t_game	g;
+	t_key	k;
 
-	g = init_game();
-	mlx_hook(g.win, E_KEY_PRESS, M_KEY_PRESS, hook_key_press, &g);
-	mlx_hook(g.win, E_KEY_RELEASE, M_KEY_RELEASE, hook_key_release, &g);
-	mlx_loop_hook(g.mlx, hook_loop, &g);
-	mlx_loop(g.mlx);
-	return (0);
+	k.press_w = ft_false;
+	k.press_a = ft_false;
+	k.press_s = ft_false;
+	k.press_d = ft_false;
+	k.press_shift = ft_false;
+	k.press_esc = ft_false;
+	return (k);
 }
