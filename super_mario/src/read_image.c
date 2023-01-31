@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_image.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 20:07:42 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/10 19:29:08 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/01/31 17:06:02 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ t_image	read_image(void *mlx, char *path)
 	int		y;
 
 	img.img = mlx_xpm_file_to_image(mlx, path, &x, &y);
-	img.size = init_point(2, x, y, -1);
+	img.size = init_point(x, y);
 	return (img);
 }

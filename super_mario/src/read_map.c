@@ -6,13 +6,13 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 20:26:13 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 14:15:16 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/01/31 16:59:35 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
 #include "so_long.h"
 #include "libft.h"
+#include <fcntl.h>
 
 static int	get_num_line(char *path)
 {
@@ -21,6 +21,8 @@ static int	get_num_line(char *path)
 	int		ret;
 
 	fd = open(path, O_RDONLY);
+	if (fd < 0)
+		return (-1);
 	ret = 0;
 	while (ft_true)
 	{
@@ -48,6 +50,8 @@ t_map	read_map(char *path)
 	map.size.y = get_num_line(path);
 	map.map = (char **)ft_calloc(map.size.y + 1, sizeof(char *));
 	fd = open(path, O_RDONLY);
+	if (fd < 0)
+		return (map);
 	i = 0;
 	while (i < map.size.y)
 		map.map[i++] = get_next_line(fd);

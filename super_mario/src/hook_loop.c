@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:49:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 16:26:14 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/01/31 17:05:48 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	block_x(t_game *g)
 	t_point	next_x;
 
 	blocked_x = 0;
-	next_x = init_point(2, g->player.pos.x + g->player.v.x, g->player.pos.y, -1);
+	next_x = init_point(g->player.pos.x + g->player.v.x, g->player.pos.y);
 	if ('1' <= g->map.map[next_x.y/32][next_x.x/32] && g->map.map[next_x.y/32][next_x.x/32] <= 'C')
 	{
 		blocked_x = 1;
@@ -92,7 +92,7 @@ static void	block_y(t_game *g)
 	t_point	next_y;
 
 	blocked_y = 0;
-	next_y = init_point(2, g->player.pos.x, g->player.pos.y + g->player.v.y, -1);
+	next_y = init_point(g->player.pos.x, g->player.pos.y + g->player.v.y);
 	if ('1' <= g->map.map[next_y.y/32][next_y.x/32] && g->map.map[next_y.y/32][next_y.x/32] <= 'C')
 	{
 		blocked_y = 1;
