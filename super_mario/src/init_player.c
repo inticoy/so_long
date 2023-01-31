@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:30:12 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 17:05:27 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/01/31 17:10:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_player	init_player(t_map m)
 		while (x < m.size.x)
 		{
 			if (m.map[y][x] == 'P')
-				p.pos = init_point(x * 32, y * 32);
+				p.pos = init_point(x * SIZE_X, y * SIZE_Y);
 			x++;
 		}
 		y++;

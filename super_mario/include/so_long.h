@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 17:05:02 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/01/31 17:11:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@
 # define KEY_SHIFT 257
 # define KEY_ESC 53
 
-# define BLOCK_X 32
-# define BLOCK_Y 32
+# define SIZE_X 32
+# define SIZE_Y 32
 
 typedef struct s_point	t_size;
 typedef struct s_point	t_point;
