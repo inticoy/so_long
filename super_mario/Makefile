@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/01/31 16:26:48 by gyoon            ###   ########.fr        #
+#    Updated: 2023/02/01 15:21:55 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS = $(addprefix src/, \
 		init_game.c init_key.c init_map.c init_player.c init_point.c \
 		raise_error.c \
 		read_assets.c read_image.c read_map.c \
+		set_map.c set_player.c \
 		main.c)
 OBJS = $(SRCS:.c=.o)
 

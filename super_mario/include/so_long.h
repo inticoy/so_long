@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 17:11:16 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/01 15:00:38 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@
 # define KEY_SHIFT 257
 # define KEY_ESC 53
 
-# define SIZE_X 32
-# define SIZE_Y 32
+# define PX_X 32
+# define PX_Y 32
 
-typedef struct s_point	t_size;
 typedef struct s_point	t_point;
+typedef struct s_point	t_size;
 typedef struct s_point	t_velocity;
 typedef struct s_point	t_acceleration;
 
@@ -126,5 +126,8 @@ void		raise_error(char *msg);
 t_assets	read_assets(void *mlx);
 t_image		read_image(void *mlx, char *path);
 t_map		read_map(char *path);
+
+int			set_map(t_game *g, char *map_path);
+int			set_player(t_game *g);
 
 #endif

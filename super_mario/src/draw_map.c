@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 17:35:21 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/01 15:22:23 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 
 void	draw_map(t_game g)
 {
-	int	x;
-	int	y;
-	int	i;
+	int		x;
+	int		y;
+	int		i;
+	void	*img;
+
 
 	y = 0;
 	while (g.map.map[y])
@@ -27,7 +29,8 @@ void	draw_map(t_game g)
 		x = 0;
 		while (x < g.map.size.x)
 		{
-			mlx_put_image_to_window(g.mlx, g.win, g.assets.block[0].img, x * SIZE_X, y * SIZE_Y);
+			img = g.assets.block[0].img;
+			mlx_put_image_to_window(g.mlx, g.win, img, PX_X * x, PX_Y * y);
 			i = 0;
 			if (g.map.map[y][x] == '1')
 				i = 3;
@@ -35,7 +38,8 @@ void	draw_map(t_game g)
 				i = 9 + (pow((5 - (g.frame / 8) % 6), 2) + pow(((g.frame / 8) % 6), 2)) / 8;
 			else if (g.map.map[y][x] == '2')
 				i = 13;
-			mlx_put_image_to_window(g.mlx, g.win, g.assets.block[i].img, x * SIZE_X, y * SIZE_Y);
+			img = g.assets.block[i].img;
+			mlx_put_image_to_window(g.mlx, g.win, img, PX_X * x, PX_Y * y);
 			x++;
 		}
 		y++;
