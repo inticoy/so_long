@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/01 15:00:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/01 16:11:10 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,18 +92,11 @@ typedef struct s_game
 	t_size				size;
 	t_map				map;
 	t_assets			assets;
-	t_player			player;	
 	t_key				key;
+	t_player			player;	
+	t_list				*collectibles;
+	t_list				*enemies;
 }	t_game;
-
-typedef struct s_data
-{
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_data;
 
 void		close_game(t_game *g);
 
