@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/01 16:11:10 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/01 16:19:36 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,20 @@ typedef struct s_player
 	t_velocity		v;
 	t_acceleration	a;
 }	t_player;
+
+typedef struct s_enemy
+{
+	t_bool		is_dead;
+	t_point		pos;
+	t_velocity	v;
+}	t_enemy;
+
+typedef struct s_collectible
+{
+	t_bool		is_collected;
+	long long	frame_collected;
+}	t_collectible;
+
 
 typedef struct s_key
 {
