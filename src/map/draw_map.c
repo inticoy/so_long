@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/02/01 15:22:23 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/04 21:38:56 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ void	draw_map(t_game g)
 		}
 		y++;
 	}
+	mlx_string_put(g.mlx, g.win, 32, 32, 0xFFFFFF, "Hello");
 }
