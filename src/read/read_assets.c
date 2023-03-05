@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 19:54:19 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/04 22:43:06 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/05 21:05:55 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static void	read_marios(void *mlx, t_assets *assets)
 	assets->mario[9] = read_image(mlx, "./assets/mario/left/mario_9.xpm");
 	assets->mario[10] = read_image(mlx, "./assets/mario/left/mario_10.xpm");
 	assets->mario[11] = read_image(mlx, "./assets/mario/left/mario_11.xpm");
+	assets->mario[12] = read_image(mlx, "./assets/mario/mario_dead.xpm");
 }
 
 static void	read_coins(void *mlx, t_assets *assets)
@@ -46,6 +47,7 @@ static void	read_coins(void *mlx, t_assets *assets)
 	assets->coin[1] = read_image(mlx, "./assets/coin/coin_1.xpm");
 	assets->coin[2] = read_image(mlx, "./assets/coin/coin_2.xpm");
 	assets->coin[3] = read_image(mlx, "./assets/coin/coin_3.xpm");
+	assets->coin[4] = read_image(mlx, "./assets/coin/coin.xpm");
 }
 
 static void	read_goombas(void *mlx, t_assets *assets)
@@ -63,5 +65,6 @@ t_assets	read_assets(void *mlx)
 	read_marios(mlx, &assets);
 	read_coins(mlx, &assets);
 	read_goombas(mlx, &assets);
+	assets.peach[0] = read_image(mlx, "./assets/peach/peach.xpm");
 	return (assets);
 }

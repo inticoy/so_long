@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/04 22:24:54 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/05 21:05:30 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,10 @@ typedef struct s_image
 typedef struct s_assets
 {
 	t_image	block[14];
-	t_image	mario[12];
-	t_image	coin[4];
+	t_image	mario[13];
+	t_image	coin[5];
 	t_image	goomba[3];
+	t_image	peach[2];
 }	t_assets;
 
 typedef struct s_map
@@ -130,6 +131,7 @@ void		close_game(t_game *g);
 void		draw_game(t_game g);
 void		draw_map(t_game g);
 void		draw_player(t_game g);
+void		draw_exit(t_game g);
 
 int			hook_key_release(int keycode, t_game *game);
 int			hook_key_press(int keycode, t_game *game);

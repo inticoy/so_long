@@ -1,6 +1,6 @@
-path = "../assets/coin/"
-filename = "coin_3.xpm"
-newfilename = "coin_3_32.xpm"
+path = "../assets/peach/"
+filename = "peach.xpm"
+newfilename = "peach1.xpm"
 
 pixel_from = 16
 pixel_to = 32
@@ -15,7 +15,7 @@ after[3] = after[3].replace(str(pixel_from), str(pixel_to), 2)
 
 for line in range(5 + colors, 5 + colors + pixel_from):
 	newline = ""
-	for letter in before[line][1:1 + int(pixel_from/2)]:
+	for letter in before[line][1:1 + pixel_from]:
 		newline += letter + letter
 	after.append('"' + newline + '",')
 	after.append('"' + newline + '",')

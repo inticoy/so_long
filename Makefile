@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/04 20:58:41 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/05 20:56:05 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CC = cc
 RM = rm -rf
 
 SRCS_ERROR	= $(addprefix error/,	raise_error.c)
+SRCS_EXIT	= $(addprefix exit/,	draw_exit.c)
 SRCS_GAME	= $(addprefix game/,	close_game.c		\
 									draw_game.c			\
 									hook_loop.c			\
@@ -37,6 +38,7 @@ SRCS_READ	= $(addprefix read/,	read_assets.c		\
 SRCS_MAIN	= main.c
 
 SRCS = $(addprefix src/,	$(SRCS_ERROR)	\
+							$(SRCS_EXIT)	\
 							$(SRCS_GAME)	\
 							$(SRCS_KEY)		\
 							$(SRCS_MAP)		\

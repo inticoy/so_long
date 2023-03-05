@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:21:17 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/05 16:01:19 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/05 21:09:45 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@ void	draw_game(t_game g)
 {
 	mlx_clear_window(g.mlx, g.win);
 	draw_map(g);
+	draw_exit(g);
 	draw_player(g);
 }
