@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 19:54:19 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/06 18:57:47 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/06 19:36:57 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,52 +14,47 @@
 
 static void	read_blocks(void *mlx, t_assets *assets)
 {
-	assets->block[0] = read_image(mlx, "./assets/block/sky_0.xpm");
-	assets->block[1] = read_image(mlx, "./assets/block/ground_0.xpm");
-	assets->block[2] = read_image(mlx, "./assets/block/stair_0.xpm");
-	assets->block[3] = read_image(mlx, "./assets/block/wall_0.xpm");
-	assets->block[10] = read_image(mlx, "./assets/item/item_0.xpm");
-	assets->block[11] = read_image(mlx, "./assets/item/item_1.xpm");
-	assets->block[12] = read_image(mlx, "./assets/item/item_2.xpm");
-	assets->block[13] = read_image(mlx, "./assets/item/item_3.xpm");
+	assets->block[0] = read_image(mlx, "./assets/block/sky.xpm");
+	assets->block[1] = read_image(mlx, "./assets/block/ground.xpm");
+	assets->block[2] = read_image(mlx, "./assets/block/stair.xpm");
+	assets->block[3] = read_image(mlx, "./assets/block/wall.xpm");
+	assets->block[10] = read_image(mlx, "./assets/block/item/0.xpm");
+	assets->block[11] = read_image(mlx, "./assets/block/item/1.xpm");
+	assets->block[12] = read_image(mlx, "./assets/block/item/2.xpm");
+	assets->block[13] = read_image(mlx, "./assets/block/item/3.xpm");
 }
 
-static void	read_marios(void *mlx, t_assets *assets)
+static void	read_characters(void *mlx, t_assets *assets)
 {
-	assets->mario[0][0] = read_image(mlx, "./assets/mario/left/mario_6.xpm");
-	assets->mario[0][1] = read_image(mlx, "./assets/mario/left/mario_7.xpm");
-	assets->mario[0][2] = read_image(mlx, "./assets/mario/left/mario_8.xpm");
-	assets->mario[0][3] = read_image(mlx, "./assets/mario/left/mario_9.xpm");
-	assets->mario[0][4] = read_image(mlx, "./assets/mario/left/mario_10.xpm");
-	assets->mario[0][5] = read_image(mlx, "./assets/mario/left/mario_11.xpm");
-	assets->mario[1][0] = read_image(mlx, "./assets/mario/right/mario_0.xpm");
-	assets->mario[1][1] = read_image(mlx, "./assets/mario/right/mario_1.xpm");
-	assets->mario[1][2] = read_image(mlx, "./assets/mario/right/mario_2.xpm");
-	assets->mario[1][3] = read_image(mlx, "./assets/mario/right/mario_3.xpm");
-	assets->mario[1][4] = read_image(mlx, "./assets/mario/right/mario_4.xpm");
-	assets->mario[1][5] = read_image(mlx, "./assets/mario/right/mario_5.xpm");
-	assets->mario[2][0] = read_image(mlx, "./assets/mario/mario_dead.xpm");
-	assets->mario[2][1] = read_image(mlx, "./assets/mario/mario_dead.xpm");
-	assets->mario[2][2] = read_image(mlx, "./assets/mario/mario_dead.xpm");
-	assets->mario[2][3] = read_image(mlx, "./assets/mario/mario_dead.xpm");
-	assets->mario[2][4] = read_image(mlx, "./assets/mario/mario_dead.xpm");
-	assets->mario[2][5] = read_image(mlx, "./assets/mario/mario_dead.xpm");
+	assets->player[0][0] = read_image(mlx, "./assets/mario/left/stand.xpm");
+	assets->player[0][1] = read_image(mlx, "./assets/mario/left/walk_0.xpm");
+	assets->player[0][2] = read_image(mlx, "./assets/mario/left/walk_1.xpm");
+	assets->player[0][3] = read_image(mlx, "./assets/mario/left/walk_2.xpm");
+	assets->player[0][4] = read_image(mlx, "./assets/mario/left/slide.xpm");
+	assets->player[0][5] = read_image(mlx, "./assets/mario/left/jump.xpm");
+	assets->player[1][0] = read_image(mlx, "./assets/mario/right/stand.xpm");
+	assets->player[1][1] = read_image(mlx, "./assets/mario/right/walk_0.xpm");
+	assets->player[1][2] = read_image(mlx, "./assets/mario/right/walk_1.xpm");
+	assets->player[1][3] = read_image(mlx, "./assets/mario/right/walk_2.xpm");
+	assets->player[1][4] = read_image(mlx, "./assets/mario/right/slide.xpm");
+	assets->player[1][5] = read_image(mlx, "./assets/mario/right/jump.xpm");
+	assets->player[2][0] = read_image(mlx, "./assets/mario/dead/dead.xpm");
+	assets->player[2][1] = read_image(mlx, "./assets/mario/dead/dead.xpm");
+	assets->player[2][2] = read_image(mlx, "./assets/mario/dead/dead.xpm");
+	assets->player[2][3] = read_image(mlx, "./assets/mario/dead/dead.xpm");
+	assets->player[2][4] = read_image(mlx, "./assets/mario/dead/dead.xpm");
+	assets->player[2][5] = read_image(mlx, "./assets/mario/dead/dead.xpm");
+	assets->enemy[0] = read_image(mlx, "./assets/goomba/walk_0.xpm");
+	assets->enemy[1] = read_image(mlx, "./assets/goomba/walk_1.xpm");
+	assets->enemy[2] = read_image(mlx, "./assets/goomba/dead.xpm");
+	assets->peach = read_image(mlx, "./assets/peach/stand.xpm");
 }
 
-static void	read_coins(void *mlx, t_assets *assets)
+static void	read_collectibles(void *mlx, t_assets *assets)
 {
-	assets->coin[0] = read_image(mlx, "./assets/coin/coin_0.xpm");
-	assets->coin[1] = read_image(mlx, "./assets/coin/coin_1.xpm");
-	assets->coin[2] = read_image(mlx, "./assets/coin/coin_2.xpm");
-	assets->coin[3] = read_image(mlx, "./assets/coin/coin_3.xpm");
-	assets->coin[4] = read_image(mlx, "./assets/coin/coin.xpm");
-}
-
-static void	read_goombas(void *mlx, t_assets *assets)
-{
-	assets->goomba[0] = read_image(mlx, "./assets/goomba/goomba_right.xpm");
-	assets->goomba[1] = read_image(mlx, "./assets/goomba/goomba_left.xpm");
-	assets->goomba[2] = read_image(mlx, "./assets/goomba/goomba_dead.xpm");
+	assets->collectible[0] = read_image(mlx, "./assets/coin/0.xpm");
+	assets->collectible[1] = read_image(mlx, "./assets/coin/1.xpm");
+	assets->collectible[2] = read_image(mlx, "./assets/coin/2.xpm");
 }
 
 t_assets	read_assets(void *mlx)
@@ -67,9 +62,7 @@ t_assets	read_assets(void *mlx)
 	t_assets	assets;
 
 	read_blocks(mlx, &assets);
-	read_marios(mlx, &assets);
-	read_coins(mlx, &assets);
-	read_goombas(mlx, &assets);
-	assets.peach[0] = read_image(mlx, "./assets/peach/peach.xpm");
+	read_characters(mlx, &assets);
+	read_collectibles(mlx, &assets);
 	return (assets);
 }

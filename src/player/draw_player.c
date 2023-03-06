@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:46:33 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/06 19:08:09 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/06 19:37:38 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ void	draw_player(t_game g)
 		j = 4;
 	else
 		j = 0;
-	mlx_put_image_to_window(g.mlx, g.win, g.assets.mario[i][j].img, g.player.pos.x, g.player.pos.y);
+	mlx_put_image_to_window(g.mlx, g.win, g.assets.player[i][j].img, g.player.pos.x, g.player.pos.y);
 }

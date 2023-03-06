@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 20:53:22 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/05 20:58:41 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/06 19:40:17 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	draw_exit(t_game g)
 		{
 			if (g.map.map[y][x] == 'E')
 			{
-				img = g.assets.peach[0].img;
+				img = g.assets.peach.img;
 				mlx_put_image_to_window(g.mlx, g.win, img, PX_X * x, PX_Y * y);
 			}
 			x++;
