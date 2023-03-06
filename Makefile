@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/06 19:17:53 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/06 21:17:22 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,9 @@ CC = cc
 # CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
+SRCS_ENEMY	= $(addprefix enemy/,	draw_enemy.c		\
+									init_enemy.c		\
+									set_enemy.c)
 SRCS_ERROR	= $(addprefix error/,	raise_error.c)
 SRCS_EXIT	= $(addprefix exit/,	draw_exit.c)
 SRCS_GAME	= $(addprefix game/,	close_game.c		\
@@ -31,13 +34,15 @@ SRCS_MAP	= $(addprefix map/,		draw_map.c			\
 									set_map.c)
 SRCS_PLAYER	= $(addprefix player/,	draw_player.c		\
 									init_player.c		\
+									move_player.c		\
 									set_player.c)
 SRCS_POINT	= $(addprefix point/,	init_point.c)
 SRCS_READ	= $(addprefix read/,	read_assets.c		\
 									read_image.c)
 SRCS_MAIN	= main.c
 
-SRCS = $(addprefix src/,	$(SRCS_ERROR)	\
+SRCS = $(addprefix src/,	$(SRCS_ENEMY)	\
+							$(SRCS_ERROR)	\
 							$(SRCS_EXIT)	\
 							$(SRCS_GAME)	\
 							$(SRCS_KEY)		\

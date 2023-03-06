@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hook_loop.c                                        :+:      :+:    :+:   */
+/*   init_enemy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/04 13:49:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/06 21:17:01 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/06 19:44:35 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/06 19:47:03 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "libft.h"
 
-int	hook_loop(t_game *g)
+t_enemy init_enemy(t_map m)
 {
-	if (g->key.press_esc)
-		close_game(g);
-	g->frame++;
-	move_player(g);
-	//move_enemy(g);
-	draw_game(*g);
-	return (0);
+	t_player	p;
+	int			x;
+	int			y;
+
+	y = 0;
+	while (y < m.size.y)
+	{
+		x = 0;
+		while (x < m.size.x)
+		{
+			if (m.map[y][x] == 'E')
+				p.pos = init_point(x * PX_X, y * PX_Y);
+			x++;
+		}
+		y++;
+	}
+	p.status = 1;
+	p.remaining = 96;
+	p.v = init_point(0, 0);
+	p.a = init_point(0, 0);
+	return (p);
 }

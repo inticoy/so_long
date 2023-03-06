@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/06 19:38:33 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/06 21:10:35 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,34 +132,41 @@ typedef struct s_game
 	t_assets			assets;
 	t_key				key;
 	t_player			player;	
+	t_enemy				enemy;
 	t_list				*collectibles;
-	t_list				*enemies;
 }	t_game;
 
-void		close_game(t_game *g);
+void		draw_enemy(t_game g);
+t_enemy		init_enemy(t_map m);
+int			set_enemy(t_game *g);
 
-void		draw_game(t_game g);
-void		draw_map(t_game g);
-void		draw_player(t_game g);
 void		draw_exit(t_game g);
+
+void		close_game(t_game *g);
+void		draw_game(t_game g);
+int			hook_loop(t_game *game);
+t_game		init_game(char *map_path);
 
 int			hook_key_release(int keycode, t_game *game);
 int			hook_key_press(int keycode, t_game *game);
-int			hook_loop(t_game *game);
-
-t_game		init_game(char *map_path);
 t_key		init_key(void);
-t_map		init_map(void);
-t_player	init_player(t_map m);
-t_point		init_point(int x, int y);
 
 void		raise_error(char *msg);
 
+void		draw_map(t_game g);
+t_map		init_map(void);
+t_map		read_map(char *path);
+int			set_map(t_game *g, char *map_path);
+
+
+void		draw_player(t_game g);
+t_player	init_player(t_map m);
+void		move_player(t_game *g);
+int			set_player(t_game *g);
+
+t_point		init_point(int x, int y);
+
 t_assets	read_assets(void *mlx);
 t_image		read_image(void *mlx, char *path);
-t_map		read_map(char *path);
-
-int			set_map(t_game *g, char *map_path);
-int			set_player(t_game *g);
 
 #endif
