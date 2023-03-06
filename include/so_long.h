@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/05 21:05:30 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/06 19:03:30 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,25 @@ enum e_key_code
 # define PX_X 32
 # define PX_Y 32
 
-typedef struct s_point	t_point;
-typedef struct s_point	t_size;
-typedef struct s_point	t_velocity;
-typedef struct s_point	t_acceleration;
+typedef struct s_point			t_point;
+typedef struct s_point			t_size;
+typedef struct s_point			t_velocity;
+typedef struct s_point			t_acceleration;
+
+typedef enum e_character_status	t_player_status;
+typedef enum e_character_status	t_enemy_status;
 
 struct s_point
 {
 	int		x;
 	int		y;
+};
+
+enum e_character_status
+{
+	LEFT = -1,
+	DEAD = 0,
+	RIGHT = 1,
 };
 
 typedef struct s_image
@@ -66,7 +76,7 @@ typedef struct s_image
 typedef struct s_assets
 {
 	t_image	block[14];
-	t_image	mario[13];
+	t_image	mario[3][6];
 	t_image	coin[5];
 	t_image	goomba[3];
 	t_image	peach[2];
@@ -81,7 +91,7 @@ typedef struct s_map
 
 typedef struct s_player
 {
-	t_bool			is_left;
+	t_player_status	status;
 	int				remaining;
 	t_point			pos;
 	t_velocity		v;

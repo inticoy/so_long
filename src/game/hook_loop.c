@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:49:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 17:05:48 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/06 19:07:34 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	acceleration_x(t_game *g)
 	g->player.a.x = 0;
 	if (g->key.press_d)
 	{
-		g->player.is_left = ft_false;
+		g->player.status = RIGHT;
 		if (0 <= g->player.v.x && g->player.v.x < 4 && g->frame % 2 == 0)
 			g->player.a.x = 1;
 	}
@@ -29,7 +29,7 @@ static void	acceleration_x(t_game *g)
 	}
 	if (g->key.press_a)
 	{
-		g->player.is_left = ft_true;
+		g->player.status = LEFT;
 		if (-4 < g->player.v.x && g->player.v.x <= 0 && g->frame % 2 == 0)
 			g->player.a.x = -1;
 	}

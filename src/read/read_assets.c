@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 19:54:19 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/05 21:05:55 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/06 18:57:47 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,24 @@ static void	read_blocks(void *mlx, t_assets *assets)
 
 static void	read_marios(void *mlx, t_assets *assets)
 {
-	assets->mario[0] = read_image(mlx, "./assets/mario/right/mario_0.xpm");
-	assets->mario[1] = read_image(mlx, "./assets/mario/right/mario_1.xpm");
-	assets->mario[2] = read_image(mlx, "./assets/mario/right/mario_2.xpm");
-	assets->mario[3] = read_image(mlx, "./assets/mario/right/mario_3.xpm");
-	assets->mario[4] = read_image(mlx, "./assets/mario/right/mario_4.xpm");
-	assets->mario[5] = read_image(mlx, "./assets/mario/right/mario_5.xpm");
-	assets->mario[6] = read_image(mlx, "./assets/mario/left/mario_6.xpm");
-	assets->mario[7] = read_image(mlx, "./assets/mario/left/mario_7.xpm");
-	assets->mario[8] = read_image(mlx, "./assets/mario/left/mario_8.xpm");
-	assets->mario[9] = read_image(mlx, "./assets/mario/left/mario_9.xpm");
-	assets->mario[10] = read_image(mlx, "./assets/mario/left/mario_10.xpm");
-	assets->mario[11] = read_image(mlx, "./assets/mario/left/mario_11.xpm");
-	assets->mario[12] = read_image(mlx, "./assets/mario/mario_dead.xpm");
+	assets->mario[0][0] = read_image(mlx, "./assets/mario/left/mario_6.xpm");
+	assets->mario[0][1] = read_image(mlx, "./assets/mario/left/mario_7.xpm");
+	assets->mario[0][2] = read_image(mlx, "./assets/mario/left/mario_8.xpm");
+	assets->mario[0][3] = read_image(mlx, "./assets/mario/left/mario_9.xpm");
+	assets->mario[0][4] = read_image(mlx, "./assets/mario/left/mario_10.xpm");
+	assets->mario[0][5] = read_image(mlx, "./assets/mario/left/mario_11.xpm");
+	assets->mario[1][0] = read_image(mlx, "./assets/mario/right/mario_0.xpm");
+	assets->mario[1][1] = read_image(mlx, "./assets/mario/right/mario_1.xpm");
+	assets->mario[1][2] = read_image(mlx, "./assets/mario/right/mario_2.xpm");
+	assets->mario[1][3] = read_image(mlx, "./assets/mario/right/mario_3.xpm");
+	assets->mario[1][4] = read_image(mlx, "./assets/mario/right/mario_4.xpm");
+	assets->mario[1][5] = read_image(mlx, "./assets/mario/right/mario_5.xpm");
+	assets->mario[2][0] = read_image(mlx, "./assets/mario/mario_dead.xpm");
+	assets->mario[2][1] = read_image(mlx, "./assets/mario/mario_dead.xpm");
+	assets->mario[2][2] = read_image(mlx, "./assets/mario/mario_dead.xpm");
+	assets->mario[2][3] = read_image(mlx, "./assets/mario/mario_dead.xpm");
+	assets->mario[2][4] = read_image(mlx, "./assets/mario/mario_dead.xpm");
+	assets->mario[2][5] = read_image(mlx, "./assets/mario/mario_dead.xpm");
 }
 
 static void	read_coins(void *mlx, t_assets *assets)
