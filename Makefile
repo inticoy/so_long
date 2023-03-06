@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/05 20:56:05 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/06 19:16:44 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,8 +51,9 @@ OBJS = $(SRCS:.c=.o)
 B_SRCS = ${SRCS:.c=_bonus.c}
 B_OBJS = ${OBJS:.o=_bonus.o}
 
-MINILIBX = ./minilibx
-MLX = mlx
+MLX_PATH = ./minilibx
+FT_PATH = ./libft
+MLX = ./minilibx/libmlx.a
 LIBFT = libft/libft.a
 
 INCLUDE = ./include
@@ -65,14 +66,17 @@ endif
 
 all : $(NAME)
 
-$(NAME) : $(LIBFT) $(F_OBJS)
-	$(CC) -L$(MINILIBX) -L./libft -framework OpenGL -framework Appkit -lz $(SRCS) -lmlx -lft -I $(INCLUDE) -o $@
+$(NAME) : $(LIBFT) $(MLX) $(F_OBJS)
+	$(CC) -L$(MLX_PATH) -L$(FT_PATH) -framework OpenGL -framework Appkit -lz $(SRCS) -lmlx -lft -I $(INCLUDE) -o $@
 
 bonus : 
 	make BONUS=1 all
 
 $(LIBFT) :
 	make -C libft
+
+$(MLX) :
+	make -C minilibx
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE)
@@ -81,6 +85,7 @@ clean :
 	$(RM) $(OBJS)
 	$(RM) $(B_OBJS)
 	make -C libft clean
+	make -C minilibx clean
 
 fclean :
 	make clean
