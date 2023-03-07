@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:06:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/06 21:08:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/07 16:24:53 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,26 +59,14 @@ static void	block_x(t_game *g)
 
 	blocked_x = 0;
 	next_x = init_point(g->player.pos.x + g->player.v.x, g->player.pos.y);
-	if ('1' <= g->map.map[next_x.y/32][next_x.x/32] && g->map.map[next_x.y/32][next_x.x/32] <= 'C')
-	{
+	if ('1' == g->map.map[next_x.y / 32][next_x.x / 32])
 		blocked_x = 1;
-		ft_printf("A\n");
-	}
-	if ('1' <=  g->map.map[next_x.y/32][(next_x.x + 31)/32] && g->map.map[next_x.y/32][(next_x.x + 31)/32] <= 'C')
-	{
+	if ('1' == g->map.map[next_x.y / 32][(next_x.x + 31) / 32])
 		blocked_x = 1;
-		ft_printf("B\n");
-	}
-	if ('1' <= g->map.map[(next_x.y + 31)/32][next_x.x/32] && g->map.map[(next_x.y + 31)/32][next_x.x/32] <= 'C')
-	{
+	if ('1' == g->map.map[(next_x.y + 31) / 32][next_x.x / 32])
 		blocked_x = 1;
-		ft_printf("C\n");
-	}
-	if ('1' <= g->map.map[(next_x.y + 31)/32][(next_x.x + 31)/32] && g->map.map[(next_x.y + 31)/32][(next_x.x + 31)/32] <= 'C')
-	{
+	if ('1' == g->map.map[(next_x.y + 31) / 32][(next_x.x + 31) / 32])
 		blocked_x = 1;
-		ft_printf("D\n");
-	}
 	if (blocked_x)
 		g->player.v.x = 0;
 	else
@@ -92,33 +80,25 @@ static void	block_y(t_game *g)
 
 	blocked_y = 0;
 	next_y = init_point(g->player.pos.x, g->player.pos.y + g->player.v.y);
-	if ('1' <= g->map.map[next_y.y/32][next_y.x/32] && g->map.map[next_y.y/32][next_y.x/32] <= 'C')
+	if ('1' == g->map.map[next_y.y / 32][next_y . x/32])
 	{
 		blocked_y = 1;
 		g->player.remaining = 0;
-		if (g->map.map[next_y.y/32][next_y.x/32] == 'C')
-			g->map.map[next_y.y/32][next_y.x/32] = '2';
-		ft_printf("A\n");
 	}
-	if ('1' <=  g->map.map[next_y.y/32][(next_y.x + 31)/32] && g->map.map[next_y.y/32][(next_y.x + 31)/32] <= 'C')
+	if ('1' == g->map.map[next_y.y / 32][(next_y.x + 31) / 32])
 	{
 		blocked_y = 1;
 		g->player.remaining = 0;
-		if (g->map.map[next_y.y/32][(next_y.x + 31)/32] == 'C')
-			g->map.map[next_y.y/32][(next_y.x + 31)/32] = '2';
-		ft_printf("B\n");
 	}
-	if ('1' <= g->map.map[(next_y.y + 31)/32][next_y.x/32] && g->map.map[(next_y.y + 31)/32][next_y.x/32] <= 'C')
+	if ('1' == g->map.map[(next_y.y + 31) / 32][next_y.x / 32])
 	{
 		blocked_y = 1;
 		g->player.remaining = 96;
-		ft_printf("C\n");
 	}
-	if ('1' <= g->map.map[(next_y.y + 31)/32][(next_y.x + 31)/32] && g->map.map[(next_y.y + 31)/32][(next_y.x + 31)/32] <= 'C')
+	if ('1' == g->map.map[(next_y.y + 31) / 32][(next_y.x + 31) / 32])
 	{
 		blocked_y = 1;
 		g->player.remaining = 96;
-		ft_printf("D\n");
 	}
 	if (blocked_y)
 		g->player.v.y = 0;

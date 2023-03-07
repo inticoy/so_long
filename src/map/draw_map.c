@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/06 19:37:48 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/07 15:24:21 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ void	draw_map(t_game g)
 			i = 0;
 			if (g.map.map[y][x] == '1')
 				i = 3;
-			else if (g.map.map[y][x] == 'C')
-				i = 9 + (pow((5 - (g.frame / 8) % 6), 2) + pow(((g.frame / 8) % 6), 2)) / 8;
-			else if (g.map.map[y][x] == '2')
-				i = 13;
 			img = g.assets.block[i].img;
 			mlx_put_image_to_window(g.mlx, g.win, img, PX_X * x, PX_Y * y);
 			x++;

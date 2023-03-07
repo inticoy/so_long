@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_game.c                                        :+:      :+:    :+:   */
+/*   draw_collectibles.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 14:26:47 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/07 13:50:14 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/06 19:49:28 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/07 14:14:18 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "so_long.h"
 #include "mlx.h"
 
-t_game	init_game(char *map_path)
+void	draw_collectibles(t_game g)
 {
-	t_game	g;
-
-	g.frame = 0;
-	g.mlx = mlx_init();
-	set_map(&g, map_path);
-	set_player(&g);
-	set_enemy(&g);
-	set_collectibles(&g);
-	g.assets = read_assets(g.mlx);
-	g.size = init_point(PX_X * g.map.size.x, PX_Y * g.map.size.y);
-	g.win = mlx_new_window(g.mlx, g.size.x, g.size.y, TITLE);
-	g.key = init_key();
-	return (g);
+	while (g.collectibles)
+	{
+		mlx_put_image_to_window(g.mlx, g.win, g.assets.collectible[(g.frame / 10) % 3].img, \
+								((t_collectible *)g.collectibles->content)->pos.x * PX_X, \
+								((t_collectible *)g.collectibles->content)->pos.y * PX_Y);
+		g.collectibles = g.collectibles->next;
+	}
 }

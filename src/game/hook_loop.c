@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:49:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/06 21:17:01 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/07 15:51:31 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	hook_loop(t_game *g)
 		close_game(g);
 	g->frame++;
 	move_player(g);
-	//move_enemy(g);
+	move_enemy(g);
 	draw_game(*g);
 	return (0);
 }

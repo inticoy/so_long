@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/06 21:10:35 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/07 15:51:44 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ typedef struct s_map
 
 typedef struct s_collectible
 {
+	t_point		pos;
 	t_bool		is_collected;
 	long long	frame_collected;
 }	t_collectible;
@@ -136,8 +137,12 @@ typedef struct s_game
 	t_list				*collectibles;
 }	t_game;
 
+void		draw_collectibles(t_game g);
+void		set_collectibles(t_game *g);
+
 void		draw_enemy(t_game g);
 t_enemy		init_enemy(t_map m);
+void		move_enemy(t_game *g);
 int			set_enemy(t_game *g);
 
 void		draw_exit(t_game g);

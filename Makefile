@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/06 21:17:22 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/07 15:51:54 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,41 +16,45 @@ CC = cc
 # CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
-SRCS_ENEMY	= $(addprefix enemy/,	draw_enemy.c		\
-									init_enemy.c		\
-									set_enemy.c)
-SRCS_ERROR	= $(addprefix error/,	raise_error.c)
-SRCS_EXIT	= $(addprefix exit/,	draw_exit.c)
-SRCS_GAME	= $(addprefix game/,	close_game.c		\
-									draw_game.c			\
-									hook_loop.c			\
-									init_game.c)
-SRCS_KEY	= $(addprefix key/,		hook_key_press.c	\
-									hook_key_release.c	\
-									init_key.c)
-SRCS_MAP	= $(addprefix map/,		draw_map.c			\
-									init_map.c			\
-									read_map.c			\
-									set_map.c)
-SRCS_PLAYER	= $(addprefix player/,	draw_player.c		\
-									init_player.c		\
-									move_player.c		\
-									set_player.c)
-SRCS_POINT	= $(addprefix point/,	init_point.c)
-SRCS_READ	= $(addprefix read/,	read_assets.c		\
-									read_image.c)
-SRCS_MAIN	= main.c
+SRCS_COLLECTIBLE	= $(addprefix collectible/,	draw_collectibles.c	\
+												set_collectibles.c)
+SRCS_ENEMY			= $(addprefix enemy/,		draw_enemy.c		\
+												init_enemy.c		\
+												move_enemy.c		\
+												set_enemy.c)
+SRCS_ERROR			= $(addprefix error/,		raise_error.c)
+SRCS_EXIT			= $(addprefix exit/,		draw_exit.c)
+SRCS_GAME			= $(addprefix game/,		close_game.c		\
+												draw_game.c			\
+												hook_loop.c			\
+												init_game.c)
+SRCS_KEY			= $(addprefix key/,			hook_key_press.c	\
+												hook_key_release.c	\
+												init_key.c)
+SRCS_MAP			= $(addprefix map/,			draw_map.c			\
+												init_map.c			\
+												read_map.c			\
+												set_map.c)
+SRCS_PLAYER			= $(addprefix player/,		draw_player.c		\
+												init_player.c		\
+												move_player.c		\
+												set_player.c)
+SRCS_POINT			= $(addprefix point/,		init_point.c)
+SRCS_READ			= $(addprefix read/,		read_assets.c		\
+												read_image.c)
+SRCS_MAIN			= main.c
 
-SRCS = $(addprefix src/,	$(SRCS_ENEMY)	\
-							$(SRCS_ERROR)	\
-							$(SRCS_EXIT)	\
-							$(SRCS_GAME)	\
-							$(SRCS_KEY)		\
-							$(SRCS_MAP)		\
-							$(SRCS_PLAYER)	\
-							$(SRCS_POINT)	\
-							$(SRCS_READ)	\
-							$(SRCS_MAIN))
+SRCS				= $(addprefix src/,	$(SRCS_COLLECTIBLE)	\
+										$(SRCS_ENEMY)		\
+										$(SRCS_ERROR)		\
+										$(SRCS_EXIT)		\
+										$(SRCS_GAME)		\
+										$(SRCS_KEY)			\
+										$(SRCS_MAP)			\
+										$(SRCS_PLAYER)		\
+										$(SRCS_POINT)		\
+										$(SRCS_READ)		\
+										$(SRCS_MAIN))
 OBJS = $(SRCS:.c=.o)
 
 B_SRCS = ${SRCS:.c=_bonus.c}
