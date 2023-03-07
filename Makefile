@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/07 15:51:54 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/07 21:41:57 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,10 @@ SRCS_MAP			= $(addprefix map/,			draw_map.c			\
 												init_map.c			\
 												read_map.c			\
 												set_map.c)
-SRCS_PLAYER			= $(addprefix player/,		draw_player.c		\
+SRCS_PLAYER			= $(addprefix player/,		calc_player_a.c		\
+												calc_player_pos.c	\
+												calc_player_v.c		\
+												draw_player.c		\
 												init_player.c		\
 												move_player.c		\
 												set_player.c)

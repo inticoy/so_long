@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_player.c                                      :+:      :+:    :+:   */
+/*   calc_player_v.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 21:06:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/07 21:40:35 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/07 21:39:24 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/07 21:49:25 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	move_player(t_game *g)
+void	calc_player_v(t_game *g)
 {
-	calc_player_a(g);
-	calc_player_v(g);
-	calc_player_pos(g);
+	g->player.v.x += g->player.a.x;
+	if (-12 <= g->player.v.y + g->player.a.y \
+		&& g->player.v.y + g->player.a.y <= 12)
+		g->player.v.y += g->player.a.y;
 }

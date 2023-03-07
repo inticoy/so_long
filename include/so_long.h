@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/07 15:51:44 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/07 21:41:25 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,7 +163,9 @@ t_map		init_map(void);
 t_map		read_map(char *path);
 int			set_map(t_game *g, char *map_path);
 
-
+void		calc_player_a(t_game *g);
+void		calc_player_pos(t_game *g);
+void		calc_player_v(t_game *g);
 void		draw_player(t_game g);
 t_player	init_player(t_map m);
 void		move_player(t_game *g);
