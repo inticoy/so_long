@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 16:20:42 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/08 16:47:58 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,10 @@ enum e_key_code
 
 enum e_pixel
 {
-	PIXEL_X = 32,
-	PIXEL_Y = 32
+	BLOCK_X = 32,
+	BLOCK_Y = 32,
+	CHAR_X = 28,
+	CHAR_Y = 28
 };
 
 struct s_point

@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:16:16 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 16:17:11 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/08 16:48:17 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_bool	is_overlapped(t_point pos1, t_point pos2)
 		dy = pos1.y - pos2.y;
 	else
 		dy = pos2.y - pos1.y;
-	if (dx < PIXEL_X && dy < PIXEL_Y)
+	if (dx < CHAR_X && dy < CHAR_Y)
 		return (ft_true);
 	else
 		return (ft_false);

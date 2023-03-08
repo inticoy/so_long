@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 21:33:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/07 21:40:55 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/08 17:12:53 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ static void	block_x(t_game *g)
 
 	blocked_x = 0;
 	next_x = init_point(g->player.pos.x + g->player.v.x, g->player.pos.y);
-	if ('1' == g->map.map[next_x.y / 32][next_x.x / 32])
+	if ('1' == g->map.map[(next_x.y + 4) / BLOCK_Y][(next_x.x + 3) / BLOCK_X])
 		blocked_x = 1;
-	if ('1' == g->map.map[next_x.y / 32][(next_x.x + 31) / 32])
+	if ('1' == g->map.map[(next_x.y + 4) / BLOCK_Y][(next_x.x + 28) / BLOCK_X])
 		blocked_x = 1;
-	if ('1' == g->map.map[(next_x.y + 31) / 32][next_x.x / 32])
+	if ('1' == g->map.map[(next_x.y + 31) / BLOCK_Y][(next_x.x + 3) / BLOCK_X])
 		blocked_x = 1;
-	if ('1' == g->map.map[(next_x.y + 31) / 32][(next_x.x + 31) / 32])
+	if ('1' == g->map.map[(next_x.y + 31) / BLOCK_Y][(next_x.x + 28) / BLOCK_X])
 		blocked_x = 1;
 	if (blocked_x)
 		g->player.v.x = 0;
@@ -40,22 +40,22 @@ static void	block_y(t_game *g)
 
 	blocked_y = 0;
 	next_y = init_point(g->player.pos.x, g->player.pos.y + g->player.v.y);
-	if ('1' == g->map.map[next_y.y / 32][next_y . x/32])
+	if ('1' == g->map.map[(next_y.y + 4) / BLOCK_Y][(next_y.x + 3) / BLOCK_X])
 	{
 		blocked_y = 1;
 		g->player.remaining = 0;
 	}
-	if ('1' == g->map.map[next_y.y / 32][(next_y.x + 31) / 32])
+	if ('1' == g->map.map[(next_y.y + 4) / BLOCK_Y][(next_y.x + 28) / BLOCK_X])
 	{
 		blocked_y = 1;
 		g->player.remaining = 0;
 	}
-	if ('1' == g->map.map[(next_y.y + 31) / 32][next_y.x / 32])
+	if ('1' == g->map.map[(next_y.y + 31) / BLOCK_Y][(next_y.x + 3) / BLOCK_X])
 	{
 		blocked_y = 1;
 		g->player.remaining = 96;
 	}
-	if ('1' == g->map.map[(next_y.y + 31) / 32][(next_y.x + 31) / 32])
+	if ('1' == g->map.map[(next_y.y + 31) / BLOCK_Y][(next_y.x + 28) / BLOCK_X])
 	{
 		blocked_y = 1;
 		g->player.remaining = 96;
