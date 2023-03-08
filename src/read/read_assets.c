@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 19:54:19 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/06 19:36:57 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/08 16:20:52 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	read_characters(void *mlx, t_assets *assets)
 	assets->enemy[0] = read_image(mlx, "./assets/goomba/walk_0.xpm");
 	assets->enemy[1] = read_image(mlx, "./assets/goomba/walk_1.xpm");
 	assets->enemy[2] = read_image(mlx, "./assets/goomba/dead.xpm");
-	assets->peach = read_image(mlx, "./assets/peach/stand.xpm");
+	assets->exit = read_image(mlx, "./assets/peach/stand.xpm");
 }
 
 static void	read_collectibles(void *mlx, t_assets *assets)

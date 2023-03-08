@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 16:17:11 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/08 16:20:42 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ typedef struct s_assets
 	t_image	player[3][6];
 	t_image	collectible[5];
 	t_image	enemy[3];
-	t_image	peach;
+	t_image	exit;
 }	t_assets;
 
 typedef struct s_map
