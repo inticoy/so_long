@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_game.c                                        :+:      :+:    :+:   */
+/*   is_overlapped.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 15:21:17 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 14:35:34 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/08 14:16:16 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/08 14:21:46 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "so_long.h"
-#include "mlx.h"
 
-void	draw_game(t_game g)
+t_bool	is_overlapped(t_point pos1, t_point pos2)
 {
-	mlx_clear_window(g.mlx, g.win);
-	draw_map(g);
-	draw_exit(g);
-	draw_player(g);
-	draw_enemy(g);
-	draw_collectibles(g);
+	int	dx;
+	int	dy;
+
+	if (pos1.x > pos2.x)
+		dx = pos1.x - pos2.x;
+	else
+		dx = pos2.x - pos1.x;
+	if (pos1.y > pos2.y)
+		dy = pos1.y - pos2.y;
+	else
+		dy = pos2.y - pos1.y;
+	if (dx < PX_X && dy < PX_Y)
+		return (ft_true);
+	else
+		return (ft_false);
 }

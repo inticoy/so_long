@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/07 21:41:25 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/08 16:08:36 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef enum e_character_status	t_enemy_status;
 typedef struct s_character		t_character;
 typedef struct s_character		t_player;
 typedef struct s_character		t_enemy;
+typedef struct s_character		t_exit;
 
 struct s_point
 {
@@ -134,23 +135,36 @@ typedef struct s_game
 	t_key				key;
 	t_player			player;	
 	t_enemy				enemy;
+	t_exit				exit;
 	t_list				*collectibles;
 }	t_game;
 
-void		draw_collectibles(t_game g);
-void		set_collectibles(t_game *g);
+// character
+t_bool		is_overlapped(t_point pos1, t_point pos2);
 
+// collectible
+void		draw_collectibles(t_game g);
+int			get_remaining_collectibles(t_game *g);
+void		set_collectibles(t_game *g);
+void		update_collectibles(t_game *g);
+
+// enemy
 void		draw_enemy(t_game g);
 t_enemy		init_enemy(t_map m);
 void		move_enemy(t_game *g);
 int			set_enemy(t_game *g);
 
+// exit
 void		draw_exit(t_game g);
+t_exit		init_exit(t_map m);
+int			set_exit(t_game *g);
 
+// game
+t_bool		check_game_clear(t_game *g);
 void		close_game(t_game *g);
 void		draw_game(t_game g);
-int			hook_loop(t_game *game);
 t_game		init_game(char *map_path);
+int			run_game(t_game *game);
 
 int			hook_key_release(int keycode, t_game *game);
 int			hook_key_press(int keycode, t_game *game);

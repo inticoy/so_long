@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:26:47 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/07 13:50:14 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/08 14:28:07 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_game	init_game(char *map_path)
 	set_map(&g, map_path);
 	set_player(&g);
 	set_enemy(&g);
+	set_exit(&g);
 	set_collectibles(&g);
 	g.assets = read_assets(g.mlx);
 	g.size = init_point(PX_X * g.map.size.x, PX_Y * g.map.size.y);

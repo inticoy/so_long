@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hook_loop.c                                        :+:      :+:    :+:   */
+/*   update_collectibles.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/04 13:49:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/07 15:51:31 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/08 15:43:42 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/08 15:56:51 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "libft.h"
 
-int	hook_loop(t_game *g)
+void	update_collectibles(t_game *g)
 {
-	if (g->key.press_esc)
-		close_game(g);
-	g->frame++;
-	move_player(g);
-	move_enemy(g);
-	draw_game(*g);
-	return (0);
+	t_list	*node;
+	t_point	pos;
+
+	node = g->collectibles;
+	while (node)
+	{
+		pos = ((t_collectible *)node->content)->pos;
+		if (is_overlapped(g->player.pos, pos))
+			((t_collectible *)node->content)->is_collected = ft_true;
+		node = node->next;
+	}
 }
