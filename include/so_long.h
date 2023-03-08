@@ -6,20 +6,33 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 16:08:36 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/08 16:17:11 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# include "libft.h"
+
+# define TITLE "Super Mario Bros."
 # ifndef FT_NULL
 #  define FT_NULL (void *)0
 # endif
 
-# include "libft.h"
+typedef struct s_point			t_point;
+typedef struct s_point			t_size;
+typedef struct s_point			t_velocity;
+typedef struct s_point			t_acceleration;
 
-# define TITLE "Super Mario Bros."
+typedef enum e_character_status	t_character_status;
+typedef enum e_character_status	t_player_status;
+typedef enum e_character_status	t_enemy_status;
+
+typedef struct s_character		t_character;
+typedef struct s_character		t_player;
+typedef struct s_character		t_enemy;
+typedef struct s_character		t_exit;
 
 enum e_event
 {
@@ -43,25 +56,11 @@ enum e_key_code
 	KEY_SHIFT = 257
 };
 
-enum e_px
+enum e_pixel
 {
-	PX_X = 32,
-	PX_Y = 32
+	PIXEL_X = 32,
+	PIXEL_Y = 32
 };
-
-typedef struct s_point			t_point;
-typedef struct s_point			t_size;
-typedef struct s_point			t_velocity;
-typedef struct s_point			t_acceleration;
-
-typedef enum e_character_status	t_character_status;
-typedef enum e_character_status	t_player_status;
-typedef enum e_character_status	t_enemy_status;
-
-typedef struct s_character		t_character;
-typedef struct s_character		t_player;
-typedef struct s_character		t_enemy;
-typedef struct s_character		t_exit;
 
 struct s_point
 {

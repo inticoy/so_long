@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:29:16 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 14:30:45 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/08 16:17:11 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_exit	init_exit(t_map m)
 		while (x < m.size.x)
 		{
 			if (m.map[y][x] == 'E')
-				p.pos = init_point(x * PX_X, y * PX_Y);
+				p.pos = init_point(x * PIXEL_X, y * PIXEL_Y);
 			x++;
 		}
 		y++;
