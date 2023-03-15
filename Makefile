@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/15 17:36:50 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/15 20:28:04 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ SRCS_PLAYER			= $(addprefix player/,		calc_player_a.c		\
 												calc_player_pos.c	\
 												calc_player_v.c		\
 												draw_player.c		\
+												find_player.c		\
 												init_player.c		\
 												move_player.c		\
 												set_player.c)

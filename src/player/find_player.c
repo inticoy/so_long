@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_map.c                                         :+:      :+:    :+:   */
+/*   find_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 15:39:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/15 21:35:37 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/15 20:25:07 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/15 20:25:49 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
 #include "libft.h"
-#include "mlx.h"
-#include <math.h>
+#include "so_long.h"
 
-void	draw_map(t_game g)
+t_point	find_player(t_map map)
 {
+	t_point	pos_player;
 	int		x;
 	int		y;
-	int		i;
-	void	*img;
 
-
+	pos_player = init_point(0, 0);
 	y = 0;
-	while (g.map.map[y])
+	while (y < map.size.y)
 	{
 		x = 0;
-		while (x < g.map.size.x)
+		while (x < map.size.x)
 		{
-			img = g.assets.block[0].img;
-			mlx_put_image_to_window(g.mlx, g.win, img, BLOCK_X * x, BLOCK_Y * y);
-			i = 0;
-			if (g.map.map[y][x] == '1')
-				i = 3;
-			img = g.assets.block[i].img;
-			mlx_put_image_to_window(g.mlx, g.win, img, BLOCK_X * x, BLOCK_Y * y);
+			if (map.map[y][x] == 'P')
+			{
+				pos_player = init_point(x, y);
+				return (pos_player);
+			}
 			x++;
 		}
 		y++;
 	}
-	//mlx_string_put(g.mlx, g.win, 32, 32, 0xFFFFFF, "Hello");
+	return (pos_player);
 }
