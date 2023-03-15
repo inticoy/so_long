@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/15 16:52:26 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/15 17:28:37 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,9 @@ typedef struct s_game
 	t_list				*collectibles;
 }	t_game;
 
+//			asset
+t_assets	read_assets(void *mlx);
+
 //			character
 t_bool		is_overlapped(t_point pos1, t_point pos2);
 
@@ -167,6 +170,9 @@ void		close_game(t_game *g);
 void		draw_game(t_game g);
 t_game		init_game(char *map_path);
 int			run_game(t_game *game);
+
+//			image
+t_image		read_image(void *mlx, char *path);
 
 //			key
 int			hook_key_release(int keycode, t_game *game);
@@ -203,8 +209,5 @@ int			set_player(t_game *g);
 
 //			point
 t_point		init_point(int x, int y);
-
-t_assets	read_assets(void *mlx);
-t_image		read_image(void *mlx, char *path);
 
 #endif

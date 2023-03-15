@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/15 16:54:22 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/15 17:30:00 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CC = cc
 # CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
+SRCS_ASSET			= $(addprefix asset/,		read_assets.c)
 SRCS_CHARACTER		= $(addprefix character/,	is_overlapped.c)
 SRCS_COLLECTIBLE	= $(addprefix collectible/,	draw_collectibles.c		\
 												get_remaining_collectibles.c	\
@@ -33,6 +34,7 @@ SRCS_GAME			= $(addprefix game/,		close_game.c		\
 												draw_game.c			\
 												init_game.c			\
 												run_game.c)			
+SRCS_IMAGE			= $(addprefix image/,		read_image.c)
 SRCS_KEY			= $(addprefix key/,			hook_key_press.c	\
 												hook_key_release.c	\
 												init_key.c)
@@ -56,21 +58,20 @@ SRCS_PLAYER			= $(addprefix player/,		calc_player_a.c		\
 												move_player.c		\
 												set_player.c)
 SRCS_POINT			= $(addprefix point/,		init_point.c)
-SRCS_READ			= $(addprefix read/,		read_assets.c		\
-												read_image.c)
 SRCS_MAIN			= main.c
 
-SRCS				= $(addprefix src/,	$(SRCS_CHARACTER)	\
+SRCS				= $(addprefix src/,	$(SRCS_ASSET)		\
+										$(SRCS_CHARACTER)	\
 										$(SRCS_COLLECTIBLE)	\
 										$(SRCS_ENEMY)		\
 										$(SRCS_ERROR)		\
 										$(SRCS_EXIT)		\
 										$(SRCS_GAME)		\
+										$(SRCS_IMAGE)		\
 										$(SRCS_KEY)			\
 										$(SRCS_MAP)			\
 										$(SRCS_PLAYER)		\
 										$(SRCS_POINT)		\
-										$(SRCS_READ)		\
 										$(SRCS_MAIN))
 OBJS = $(SRCS:.c=.o)
 
