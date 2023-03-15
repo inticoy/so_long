@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/08 16:08:24 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/15 16:54:22 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,10 +36,18 @@ SRCS_GAME			= $(addprefix game/,		close_game.c		\
 SRCS_KEY			= $(addprefix key/,			hook_key_press.c	\
 												hook_key_release.c	\
 												init_key.c)
-SRCS_MAP			= $(addprefix map/,			draw_map.c			\
+SRCS_MAP			= $(addprefix map/,			$(SRCS_VALIDATION)	\
+												draw_map.c			\
 												init_map.c			\
 												read_map.c			\
-												set_map.c)
+												set_map.c			\
+												validate_map_path.c	\
+												validate_map.c)
+SRCS_VALIDATION		= $(addprefix validation/,	has_proper_char.c	\
+												has_valid_route.c	\
+												is_playable.c		\
+												is_rectangle.c		\
+												is_surrounded.c)
 SRCS_PLAYER			= $(addprefix player/,		calc_player_a.c		\
 												calc_player_pos.c	\
 												calc_player_v.c		\

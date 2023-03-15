@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 16:47:58 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/15 16:52:26 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ typedef struct s_assets
 
 typedef struct s_map
 {
+	t_bool	validity;
 	char	**map;
 	t_size	size;
 }	t_map;
@@ -140,44 +141,58 @@ typedef struct s_game
 	t_list				*collectibles;
 }	t_game;
 
-// character
+//			character
 t_bool		is_overlapped(t_point pos1, t_point pos2);
 
-// collectible
+//			collectible
 void		draw_collectibles(t_game g);
 int			get_remaining_collectibles(t_game *g);
 void		set_collectibles(t_game *g);
 void		update_collectibles(t_game *g);
 
-// enemy
+//			enemy
 void		draw_enemy(t_game g);
 t_enemy		init_enemy(t_map m);
 void		move_enemy(t_game *g);
 int			set_enemy(t_game *g);
 
-// exit
+//			exit
 void		draw_exit(t_game g);
 t_exit		init_exit(t_map m);
 int			set_exit(t_game *g);
 
-// game
+//			game
 t_bool		check_game_clear(t_game *g);
 void		close_game(t_game *g);
 void		draw_game(t_game g);
 t_game		init_game(char *map_path);
 int			run_game(t_game *game);
 
+//			key
 int			hook_key_release(int keycode, t_game *game);
 int			hook_key_press(int keycode, t_game *game);
 t_key		init_key(void);
 
+//			error
 void		raise_error(char *msg);
 
+//			map
 void		draw_map(t_game g);
 t_map		init_map(void);
 t_map		read_map(char *path);
 int			set_map(t_game *g, char *map_path);
+t_bool		validate_map_file(char *map_path);
+t_bool		validate_map(t_map map);
 
+//			map/validation
+t_bool		has_proper_char(t_map map);
+t_bool		has_valid_route(t_map map);
+t_bool		is_playable(t_map map);
+t_bool		is_rectangle(t_map map);
+t_bool		is_surrounded(t_map map);
+
+
+//			player
 void		calc_player_a(t_game *g);
 void		calc_player_pos(t_game *g);
 void		calc_player_v(t_game *g);
@@ -186,6 +201,7 @@ t_player	init_player(t_map m);
 void		move_player(t_game *g);
 int			set_player(t_game *g);
 
+//			point
 t_point		init_point(int x, int y);
 
 t_assets	read_assets(void *mlx);

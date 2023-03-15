@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gyoon <gyoon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:36:29 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/30 15:56:31 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/02/19 16:50:53 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
+enum e_file_descriptor
+{
+	STDIN = 0,
+	STDOUT = 1,
+	STDERR = 2
+};
 
 typedef struct s_buffer	t_buffer;
 

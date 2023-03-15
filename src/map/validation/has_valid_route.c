@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raise_error.c                                      :+:      :+:    :+:   */
+/*   has_valid_route.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 14:35:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/15 16:30:14 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/15 15:55:14 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/15 16:55:37 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include "so_long.h"
 
-void	raise_error(char *msg)
+t_bool	has_valid_route(t_map map)
 {
-	ft_putstr_fd(msg, STDERR);
-	exit(1);
+	return (ft_true);
 }

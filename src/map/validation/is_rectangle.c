@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raise_error.c                                      :+:      :+:    :+:   */
+/*   is_rectangle.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 14:35:40 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/15 16:30:14 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/15 15:55:18 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/15 17:00:59 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include "so_long.h"
 
-void	raise_error(char *msg)
+t_bool	is_rectangle(t_map map)
 {
-	ft_putstr_fd(msg, STDERR);
-	exit(1);
+	while (*map.map)
+	{
+		if (map.size.x != ft_strlen(*map.map) - 1)
+			return (ft_false);
+		map.map++;
+	}
+	return (ft_true);
 }
