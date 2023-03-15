@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/15 17:30:00 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/15 17:36:50 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ RM = rm -rf
 
 SRCS_ASSET			= $(addprefix asset/,		read_assets.c)
 SRCS_CHARACTER		= $(addprefix character/,	is_overlapped.c)
-SRCS_COLLECTIBLE	= $(addprefix collectible/,	draw_collectibles.c		\
+SRCS_COLLECTIBLE	= $(addprefix collectible/,	draw_collectibles.c				\
 												get_remaining_collectibles.c	\
-												update_collectibles.c	\
+												update_collectibles.c			\
 												set_collectibles.c)
 SRCS_ENEMY			= $(addprefix enemy/,		draw_enemy.c		\
 												init_enemy.c		\
