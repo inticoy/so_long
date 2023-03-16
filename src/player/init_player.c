@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:30:12 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 16:11:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 17:14:40 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ t_player	init_player(t_map m)
 	p.remaining = 96;
 	p.v = init_point(0, 0);
 	p.a = init_point(0, 0);
+	p.movement = 0;
+	p.frame_dead = 0;
 	return (p);
 }

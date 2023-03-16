@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:06:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 17:13:59 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 17:24:31 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,6 @@ void	move_player(t_game *g)
 	calc_player_a(g);
 	calc_player_v(g);
 	calc_player_pos(g);
+	if (has_movement(g))
+		g->player.movement++;
 }

@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:30:43 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 15:40:31 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 17:12:24 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ int	hook_key_release(int keycode, t_game *game)
 		game->key.shift = ft_false;
 	else if (keycode == KEY_ESC)
 		game->key.esc = ft_false;
-	ft_printf("released : %d\n", keycode);
 	return (0);
 }

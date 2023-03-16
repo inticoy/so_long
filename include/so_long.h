@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 16:11:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 17:42:28 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # define TITLE "Super Mario Bros."
 # ifndef FT_NULL
 #  define FT_NULL (void *)0
+# endif
+
+# ifdef SO_LONG_H
+#  define BONUS 0
+# else
+#  ifdef SO_LONG_BONUS_H
+#   define BONUS 1
+#  endif
 # endif
 
 typedef t_bool					t_pressed;
@@ -87,6 +95,8 @@ struct s_character
 	t_point				pos;
 	t_velocity			v;
 	t_acceleration		a;
+	unsigned long long	movement;
+	unsigned long long	frame_dead;
 };
 
 typedef struct s_image
@@ -205,8 +215,10 @@ t_bool		is_surrounded(t_map map);
 void		calc_player_a(t_game *g);
 void		calc_player_pos(t_game *g);
 void		calc_player_v(t_game *g);
+void		display_movement(t_game g, t_bool bonus);
 void		draw_player(t_game g);
 t_point		find_player(t_map map);
+t_bool		has_movement(t_game *g);
 t_player	init_player(t_map m);
 void		move_player(t_game *g);
 int			set_player(t_game *g);

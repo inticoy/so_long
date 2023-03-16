@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/16 15:42:11 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/16 17:26:45 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,8 @@ SRCS_VALIDATION		= $(addprefix validation/,	has_proper_char.c	\
 												is_playable.c		\
 												is_rectangle.c		\
 												is_surrounded.c)
-SRCS_PLAYER			= $(addprefix player/,		calc_player_a.c		\
+SRCS_PLAYER			= $(addprefix player/,		$(SRCS_MOVEMENT)	\
+												calc_player_a.c		\
 												calc_player_pos.c	\
 												calc_player_v.c		\
 												draw_player.c		\
@@ -60,6 +61,8 @@ SRCS_PLAYER			= $(addprefix player/,		calc_player_a.c		\
 												init_player.c		\
 												move_player.c		\
 												set_player.c)
+SRCS_MOVEMENT		= $(addprefix movement/,	display_movement.c	\
+												has_movement.c)
 SRCS_POINT			= $(addprefix point/,		init_point.c)
 SRCS_MAIN			= main.c
 
