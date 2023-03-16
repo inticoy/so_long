@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:26:47 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/15 17:17:41 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 15:41:25 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_game	init_game(char *map_path)
 
 	g.frame = 0;
 	g.mlx = mlx_init();
+	g.map_path = map_path;
 	if (!set_map(&g, map_path))
 		raise_error("ERROR\n");
 	set_player(&g);

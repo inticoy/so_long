@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:49:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 16:08:01 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 15:50:32 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 int	run_game(t_game *g)
 {
-	if (g->key.press_esc)
+	if (g->key.esc)
 		close_game(g);
+	if (g->key.r)
+		restart_game(g);
 	g->frame++;
 	move_player(g);
 	move_enemy(g);

@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:26:42 by gyoon             #+#    #+#             */
-/*   Updated: 2023/01/31 14:15:16 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 15:39:53 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ t_key	init_key(void)
 {
 	t_key	k;
 
-	k.press_w = ft_false;
-	k.press_a = ft_false;
-	k.press_s = ft_false;
-	k.press_d = ft_false;
-	k.press_shift = ft_false;
-	k.press_esc = ft_false;
+	k.w = ft_false;
+	k.a = ft_false;
+	k.s = ft_false;
+	k.d = ft_false;
+	k.r = ft_false;
+	k.shift = ft_false;
+	k.esc = ft_false;
 	return (k);
 }

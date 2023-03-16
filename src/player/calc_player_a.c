@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 21:22:20 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 15:41:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 15:34:07 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	set_player_a_x(t_game *g)
 {
 	g->player.a.x = 0;
-	if (g->key.press_d)
+	if (g->key.d)
 	{
 		g->player.status = RIGHT;
 		if (0 <= g->player.v.x && g->player.v.x < 4 && g->frame % 2 == 0)
@@ -26,7 +26,7 @@ static void	set_player_a_x(t_game *g)
 		if (g->player.v.x > 0 && g->frame % 8 == 0)
 			g->player.a.x = -1;
 	}
-	if (g->key.press_a)
+	if (g->key.a)
 	{
 		g->player.status = LEFT;
 		if (-4 < g->player.v.x && g->player.v.x <= 0 && g->frame % 2 == 0)
@@ -42,7 +42,7 @@ static void	set_player_a_x(t_game *g)
 static void	set_player_a_y(t_game *g)
 {
 	g->player.a.y = 0;
-	if (g->key.press_w)
+	if (g->key.w)
 	{
 		if (g->player.remaining > 0 && -12 < g->player.v.y && g->player.v.y <= 0)
 			g->player.a.y = -8;

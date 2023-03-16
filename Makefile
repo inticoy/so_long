@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/15 20:28:04 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/16 15:42:11 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = so_long
 
 CC = cc
 # CFLAGS = -Wall -Wextra -Werror
+LEAKFLAGS = -g3 -fsanitize=address
 RM = rm -rf
 
 SRCS_ASSET			= $(addprefix asset/,		read_assets.c)
@@ -33,6 +34,7 @@ SRCS_EXIT			= $(addprefix exit/,		draw_exit.c			\
 SRCS_GAME			= $(addprefix game/,		close_game.c		\
 												draw_game.c			\
 												init_game.c			\
+												restart_game.c		\
 												run_game.c)			
 SRCS_IMAGE			= $(addprefix image/,		read_image.c)
 SRCS_KEY			= $(addprefix key/,			hook_key_press.c	\
@@ -95,7 +97,7 @@ endif
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(MLX) $(F_OBJS)
-	$(CC) -L$(MLX_PATH) -L$(FT_PATH) -framework OpenGL -framework Appkit -lz $(SRCS) -lmlx -lft -I $(INCLUDE) -o $@
+	$(CC) $(LEAKFLAGS) -L$(MLX_PATH) -L$(FT_PATH) -framework OpenGL -framework Appkit -lz $(SRCS) -lmlx -lft -I $(INCLUDE) -o $@
 
 bonus : 
 	make BONUS=1 all

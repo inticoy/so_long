@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 13:35:52 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 15:42:47 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # ifndef FT_NULL
 #  define FT_NULL (void *)0
 # endif
+
+typedef t_bool					t_pressed;
 
 typedef struct s_point			t_point;
 typedef struct s_point			t_size;
@@ -52,6 +54,7 @@ enum e_key_code
 	KEY_S = 1,
 	KEY_D = 2,
 	KEY_W = 13,
+	KEY_R = 15,
 	KEY_ESC = 53,
 	KEY_SHIFT = 257
 };
@@ -103,7 +106,6 @@ typedef struct s_assets
 
 typedef struct s_map
 {
-	t_bool	validity;
 	char	**map;
 	t_size	size;
 }	t_map;
@@ -115,19 +117,20 @@ typedef struct s_collectible
 	long long	frame_collected;
 }	t_collectible;
 
-
 typedef struct s_key
 {
-	t_bool	press_w;
-	t_bool	press_a;
-	t_bool	press_s;
-	t_bool	press_d;
-	t_bool	press_shift;
-	t_bool	press_esc;
+	t_pressed	w;
+	t_pressed	a;
+	t_pressed	s;
+	t_pressed	d;
+	t_pressed	r;
+	t_pressed	shift;
+	t_pressed	esc;
 }	t_key;
 
 typedef struct s_game
 {
+	char				*map_path;
 	unsigned long long	frame;
 	void				*mlx;
 	void				*win;
@@ -169,6 +172,7 @@ t_bool		check_game_clear(t_game *g);
 void		close_game(t_game *g);
 void		draw_game(t_game g);
 t_game		init_game(char *map_path);
+void		restart_game(t_game *g);
 int			run_game(t_game *game);
 
 //			image
@@ -196,7 +200,6 @@ t_bool		has_valid_route(t_map map);
 t_bool		is_playable(t_map map);
 t_bool		is_rectangle(t_map map);
 t_bool		is_surrounded(t_map map);
-
 
 //			player
 void		calc_player_a(t_game *g);
