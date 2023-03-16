@@ -6,71 +6,63 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 21:33:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 17:12:53 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 16:11:58 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	block_x(t_game *g)
+static t_bool	check_x_blocked(t_game *g)
 {
-	int		blocked_x;
+	t_bool	x_blocked;
 	t_point	next_x;
 
-	blocked_x = 0;
+	x_blocked = ft_false;
 	next_x = init_point(g->player.pos.x + g->player.v.x, g->player.pos.y);
-	if ('1' == g->map.map[(next_x.y + 4) / BLOCK_Y][(next_x.x + 3) / BLOCK_X])
-		blocked_x = 1;
-	if ('1' == g->map.map[(next_x.y + 4) / BLOCK_Y][(next_x.x + 28) / BLOCK_X])
-		blocked_x = 1;
-	if ('1' == g->map.map[(next_x.y + 31) / BLOCK_Y][(next_x.x + 3) / BLOCK_X])
-		blocked_x = 1;
-	if ('1' == g->map.map[(next_x.y + 31) / BLOCK_Y][(next_x.x + 28) / BLOCK_X])
-		blocked_x = 1;
-	if (blocked_x)
+	if ('1' == g->map.map[(next_x.y + 4) / UNIT_Y][(next_x.x + 3) / UNIT_X])
+		x_blocked = ft_true;
+	if ('1' == g->map.map[(next_x.y + 4) / UNIT_Y][(next_x.x + 28) / UNIT_X])
+		x_blocked = ft_true;
+	if ('1' == g->map.map[(next_x.y + 31) / UNIT_Y][(next_x.x + 3) / UNIT_X])
+		x_blocked = ft_true;
+	if ('1' == g->map.map[(next_x.y + 31) / UNIT_Y][(next_x.x + 28) / UNIT_X])
+		x_blocked = ft_true;
+	if (x_blocked)
 		g->player.v.x = 0;
-	else
-		g->player.pos.x += g->player.v.x;
+	return (x_blocked);
 }
 
-static void	block_y(t_game *g)
+static t_bool	check_y_blocked(t_game *g)
 {
-	int		blocked_y;
+	t_bool	y_blocked;
 	t_point	next_y;
 
-	blocked_y = 0;
+	y_blocked = ft_false;
 	next_y = init_point(g->player.pos.x, g->player.pos.y + g->player.v.y);
-	if ('1' == g->map.map[(next_y.y + 4) / BLOCK_Y][(next_y.x + 3) / BLOCK_X])
+	if (('1' == g->map.map[(next_y.y + 4) / UNIT_Y][(next_y.x + 3) / UNIT_X]) \
+	|| ('1' == g->map.map[(next_y.y + 4) / UNIT_Y][(next_y.x + 28) / UNIT_X]))
 	{
-		blocked_y = 1;
+		y_blocked = ft_true;
 		g->player.remaining = 0;
 	}
-	if ('1' == g->map.map[(next_y.y + 4) / BLOCK_Y][(next_y.x + 28) / BLOCK_X])
+	if (('1' == g->map.map[(next_y.y + 31) / UNIT_Y][(next_y.x + 3) / UNIT_X]) \
+	|| ('1' == g->map.map[(next_y.y + 31) / UNIT_Y][(next_y.x + 28) / UNIT_X]))
 	{
-		blocked_y = 1;
-		g->player.remaining = 0;
-	}
-	if ('1' == g->map.map[(next_y.y + 31) / BLOCK_Y][(next_y.x + 3) / BLOCK_X])
-	{
-		blocked_y = 1;
+		y_blocked = ft_true;
 		g->player.remaining = 96;
 	}
-	if ('1' == g->map.map[(next_y.y + 31) / BLOCK_Y][(next_y.x + 28) / BLOCK_X])
-	{
-		blocked_y = 1;
-		g->player.remaining = 96;
-	}
-	if (blocked_y)
+	if (y_blocked)
 		g->player.v.y = 0;
-	else
-	{
-		g->player.pos.y += g->player.v.y;
-		g->player.remaining += g->player.v.y;
-	}
+	return (y_blocked);
 }
 
 void	calc_player_pos(t_game *g)
 {
-	block_x(g);
-	block_y(g);
+	if (!check_x_blocked(g))
+		g->player.pos.x += g->player.v.x;
+	if (!check_y_blocked(g))
+	{
+		g->player.pos.y += g->player.v.y;
+		g->player.remaining += g->player.v.y;
+	}
 }

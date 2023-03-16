@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 19:44:35 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 16:50:47 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 16:11:38 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_enemy init_enemy(t_map m)
 		while (x < m.size.x)
 		{
 			if (m.map[y][x] == 'E')
-				p.pos = init_point(x * BLOCK_X, y * BLOCK_Y);
+				p.pos = init_point(x * UNIT_X, y * UNIT_Y);
 			x++;
 		}
 		y++;

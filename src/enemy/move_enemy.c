@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:29:27 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 15:16:05 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 16:11:38 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	acceleration_y(t_game *g)
 	g->enemy.a.y = 2;
 }
 
-static void	block_x(t_game *g)
+static void	unit_x(t_game *g)
 {
 	int		blocked_x;
 	t_point	next_x;
@@ -38,7 +38,7 @@ static void	block_x(t_game *g)
 		g->enemy.pos.x += g->enemy.v.x;
 }
 
-static void	block_y(t_game *g)
+static void	unit_y(t_game *g)
 {
 	int		blocked_y;
 	t_point	next_y;
@@ -80,6 +80,6 @@ void	move_enemy(t_game *g)
 	acceleration_y(g);
 	if (g->enemy.v.y + g->enemy.a.y >= -12 && g->enemy.v.y + g->enemy.a.y <= 12)
 		g->enemy.v.y += g->enemy.a.y;
-	block_x(g);
-	block_y(g);
+	unit_x(g);
+	unit_y(g);
 }

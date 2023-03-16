@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:40:10 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 16:48:41 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 16:11:38 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	set_collectibles(t_game *g)
 			{
 				collectible = (t_collectible *) \
 							ft_calloc(1, sizeof(t_collectible));
-				collectible->pos.x = x * BLOCK_X;
-				collectible->pos.y = y * BLOCK_Y;
+				collectible->pos.x = x * UNIT_X;
+				collectible->pos.y = y * UNIT_Y;
 				ft_lstadd_back(&head, ft_lstnew(collectible));
 			}
 			x++;

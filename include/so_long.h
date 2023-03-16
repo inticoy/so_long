@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 15:42:47 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 16:11:38 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ enum e_key_code
 
 enum e_pixel
 {
-	BLOCK_X = 32,
-	BLOCK_Y = 32,
+	UNIT_X = 32,
+	UNIT_Y = 32,
 	CHAR_X = 28,
 	CHAR_Y = 28
 };

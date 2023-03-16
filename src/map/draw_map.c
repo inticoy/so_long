@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 13:33:31 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 16:14:30 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	draw_map(t_game g)
 	int		x;
 	int		y;
 	int		i;
-	void	*img;
 
 	y = 0;
 	while (g.map.map[y])
@@ -28,16 +27,15 @@ void	draw_map(t_game g)
 		x = 0;
 		while (x < g.map.size.x)
 		{
-			img = g.assets.block[0].img;
-			mlx_put_image_to_window(g.mlx, g.win, img, BLOCK_X * x, BLOCK_Y * y);
+			mlx_put_image_to_window(g.mlx, g.win, g.assets.block[0].img, \
+									UNIT_X * x, UNIT_Y * y);
 			i = 0;
 			if (g.map.map[y][x] == '1')
 				i = 3;
-			img = g.assets.block[i].img;
-			mlx_put_image_to_window(g.mlx, g.win, img, BLOCK_X * x, BLOCK_Y * y);
+			mlx_put_image_to_window(g.mlx, g.win, g.assets.block[i].img, \
+									UNIT_X * x, UNIT_Y * y);
 			x++;
 		}
 		y++;
 	}
-	//mlx_string_put(g.mlx, g.win, 32, 32, 0xFFFFFF, "Hello");
 }
