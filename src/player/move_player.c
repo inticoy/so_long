@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:06:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 20:43:06 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 22:42:43 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static void	dead_player(t_game *g)
 void	move_player(t_game *g)
 {
 	dead_player(g);
-	calc_player_a(g);
-	calc_player_v(g);
-	calc_player_pos(g);
+	update_player_a(g);
+	update_player_v(g);
+	update_player_pos(g);
 	if (has_movement(g))
 		g->player.movement++;
 }

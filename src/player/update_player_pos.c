@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_player_pos.c                                  :+:      :+:    :+:   */
+/*   update_player_pos.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 21:33:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 20:47:13 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/16 22:45:12 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/16 22:45:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static t_bool	check_y_blocked(t_game *g)
 	return (y_blocked);
 }
 
-void	calc_player_pos(t_game *g)
+void	update_player_pos(t_game *g)
 {
 	if ((g->player.status == DEAD) || !check_x_blocked(g))
 		g->player.pos.x += g->player.v.x;

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_player_a.c                                    :+:      :+:    :+:   */
+/*   update_player_a.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 21:22:20 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 21:44:15 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 22:45:08 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	set_player_a_x(t_game *g)
+static void	update_player_a_x(t_game *g)
 {
 	g->player.a.x = 0;
 	if (g->key.d)
@@ -39,7 +39,7 @@ static void	set_player_a_x(t_game *g)
 	}
 }
 
-static void	set_player_a_y(t_game *g)
+static void	update_player_a_y(t_game *g)
 {
 	g->player.a.y = 0;
 	if (g->key.w)
@@ -52,8 +52,8 @@ static void	set_player_a_y(t_game *g)
 	g->player.a.y += 2;
 }
 
-void	calc_player_a(t_game *g)
+void	update_player_a(t_game *g)
 {
-	set_player_a_x(g);
-	set_player_a_y(g);
+	update_player_a_x(g);
+	update_player_a_y(g);
 }

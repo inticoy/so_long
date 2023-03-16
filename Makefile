@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/16 17:26:45 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/16 22:52:04 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,12 +26,20 @@ SRCS_COLLECTIBLE	= $(addprefix collectible/,	draw_collectibles.c				\
 SRCS_ENEMY			= $(addprefix enemy/,		draw_enemy.c		\
 												init_enemy.c		\
 												move_enemy.c		\
-												set_enemy.c)
+												set_enemy.c			\
+												update_enemy_a.c	\
+												update_enemy_pos.c	\
+												update_enemy_v.c)
 SRCS_ERROR			= $(addprefix error/,		raise_error.c)
 SRCS_EXIT			= $(addprefix exit/,		draw_exit.c			\
 												init_exit.c			\
-												set_exit.c)
-SRCS_GAME			= $(addprefix game/,		close_game.c		\
+												move_exit.c			\
+												set_exit.c			\
+												update_exit_a.c		\
+												update_exit_pos.c	\
+												update_exit_v.c)
+SRCS_GAME			= $(addprefix game/,		check_game_clear.c	\
+												close_game.c		\
 												draw_game.c			\
 												init_game.c			\
 												restart_game.c		\
@@ -53,14 +61,14 @@ SRCS_VALIDATION		= $(addprefix validation/,	has_proper_char.c	\
 												is_rectangle.c		\
 												is_surrounded.c)
 SRCS_PLAYER			= $(addprefix player/,		$(SRCS_MOVEMENT)	\
-												calc_player_a.c		\
-												calc_player_pos.c	\
-												calc_player_v.c		\
 												draw_player.c		\
 												find_player.c		\
 												init_player.c		\
 												move_player.c		\
-												set_player.c)
+												set_player.c		\
+												update_player_a.c	\
+												update_player_pos.c	\
+												update_player_v.c)
 SRCS_MOVEMENT		= $(addprefix movement/,	display_movement.c	\
 												has_movement.c)
 SRCS_POINT			= $(addprefix point/,		init_point.c)

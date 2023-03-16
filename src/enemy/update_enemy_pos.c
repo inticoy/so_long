@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_enemy_pos.c                                   :+:      :+:    :+:   */
+/*   update_enemy_pos.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 22:14:28 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 22:19:22 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/16 22:45:33 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/16 22:45:36 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static t_bool	check_y_blocked(t_game *g)
 	return (y_blocked);
 }
 
-void	calc_enemy_pos(t_game *g)
+void	update_enemy_pos(t_game *g)
 {
 	if (!check_x_blocked(g))
 		g->enemy.pos.x += g->enemy.v.x;

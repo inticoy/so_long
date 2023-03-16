@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_enemy.c                                       :+:      :+:    :+:   */
+/*   move_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 15:29:27 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 22:45:03 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/16 22:50:02 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/16 22:50:35 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	move_enemy(t_game *g)
+void	move_exit(t_game *g)
 {
-	update_enemy_a(g);
-	update_enemy_v(g);
-	update_enemy_pos(g);
+	update_exit_a(g);
+	update_exit_v(g);
+	update_exit_pos(g);
 }
