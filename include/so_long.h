@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/15 20:27:48 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 13:35:52 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,9 +185,9 @@ void		raise_error(char *msg);
 //			map
 void		draw_map(t_game g);
 t_map		init_map(void);
-t_map		read_map(char *path);
+t_map		read_map(char *map_path);
 int			set_map(t_game *g, char *map_path);
-t_bool		validate_map_file(char *map_path);
+t_bool		validate_map_path(char *map_path);
 t_bool		validate_map(t_map map);
 
 //			map/validation

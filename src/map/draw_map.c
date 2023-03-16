@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/15 21:35:37 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 13:33:31 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	draw_map(t_game g)
 	int		y;
 	int		i;
 	void	*img;
-
 
 	y = 0;
 	while (g.map.map[y])
