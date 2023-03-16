@@ -6,15 +6,21 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:10:41 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 19:53:15 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 20:16:18 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "so_long.h"
+#include "mlx.h"
 
 static void	display_in_window(t_game g)
 {
+	char	*movement;
+
+	movement = ft_itoa(g.player.movement);
+	mlx_string_put(g.mlx, g.win, 0, 32, 0xFFFFFFFF, movement);
+	ft_free_s(movement);
 	return ;
 }
 
@@ -44,10 +50,8 @@ static void	display_in_shell(t_game g)
 
 void	display_movement(t_game g, t_bool bonus)
 {
-	if (!has_movement(&g))
-		return ;
 	if (bonus)
 		display_in_window(g);
-	else
+	else if (has_movement(&g))
 		display_in_shell(g);
 }
