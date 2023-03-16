@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_enemy.c                                       :+:      :+:    :+:   */
+/*   calc_enemy_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 15:29:27 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 22:18:58 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/16 22:08:34 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/16 22:12:11 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	move_enemy(t_game *g)
+void	calc_enemy_a(t_game *g)
 {
-	calc_enemy_a(g);
-	calc_enemy_v(g);
-	calc_enemy_pos(g);
+	g->enemy.a.y = 2;
 }

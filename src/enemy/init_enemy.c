@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 19:44:35 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 16:11:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/16 22:13:12 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_enemy init_enemy(t_map m)
 		}
 		y++;
 	}
-	p.status = 1;
+	p.status = RIGHT;
 	p.remaining = 96;
 	p.v = init_point(0, 0);
 	p.a = init_point(0, 0);
