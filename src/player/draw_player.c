@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:46:33 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 16:15:46 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/17 15:21:47 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void	draw_player(t_game g)
 		status = 1;
 	else if (g.player.status == DEAD)
 		status = 2;
-	if (g.player.remaining != 96)
-	// if (g.player.v.y)
+	if (g.player.v.y || g.player.remaining < 0)
 		i = 5;
 	else if ((g.player.status == RIGHT && g.player.v.x > 0) \
 			|| (g.player.status == LEFT && g.player.v.x < 0))

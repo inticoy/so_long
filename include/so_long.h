@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 22:51:49 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/17 16:11:28 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,6 +169,7 @@ void		update_collectibles(t_game *g);
 //			enemy
 void		draw_enemy(t_game g);
 t_enemy		init_enemy(t_map m);
+void		kill_enemy(t_game *g);
 void		move_enemy(t_game *g);
 int			set_enemy(t_game *g);
 void		update_enemy_a(t_game *g);
@@ -206,6 +207,7 @@ void		raise_error(char *msg);
 //			map
 void		draw_map(t_game g);
 t_map		init_map(void);
+void		modify_map(t_map *map);
 t_map		read_map(char *map_path);
 int			set_map(t_game *g, char *map_path);
 t_bool		validate_map_path(char *map_path);
@@ -222,6 +224,7 @@ t_bool		is_surrounded(t_map map);
 void		draw_player(t_game g);
 t_point		find_player(t_map map);
 t_player	init_player(t_map m);
+void		kill_player(t_game *g);
 void		move_player(t_game *g);
 int			set_player(t_game *g);
 void		update_player_a(t_game *g);

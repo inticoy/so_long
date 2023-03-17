@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 19:54:19 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/08 16:20:52 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/17 16:13:22 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static void	read_blocks(void *mlx, t_assets *assets)
 {
-	assets->block[0] = read_image(mlx, "./assets/block/sky.xpm");
-	assets->block[1] = read_image(mlx, "./assets/block/ground.xpm");
+	assets->block[0] = read_image(mlx, "./assets/block/ground.xpm");
+	assets->block[1] = read_image(mlx, "./assets/block/wall.xpm");
 	assets->block[2] = read_image(mlx, "./assets/block/stair.xpm");
-	assets->block[3] = read_image(mlx, "./assets/block/wall.xpm");
+	assets->block[3] = read_image(mlx, "./assets/block/sky.xpm");
 	assets->block[10] = read_image(mlx, "./assets/block/item/0.xpm");
 	assets->block[11] = read_image(mlx, "./assets/block/item/1.xpm");
 	assets->block[12] = read_image(mlx, "./assets/block/item/2.xpm");

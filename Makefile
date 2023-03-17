@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/16 22:52:04 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/17 16:11:36 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS_COLLECTIBLE	= $(addprefix collectible/,	draw_collectibles.c				\
 												set_collectibles.c)
 SRCS_ENEMY			= $(addprefix enemy/,		draw_enemy.c		\
 												init_enemy.c		\
+												kill_enemy.c		\
 												move_enemy.c		\
 												set_enemy.c			\
 												update_enemy_a.c	\
@@ -51,6 +52,7 @@ SRCS_KEY			= $(addprefix key/,			hook_key_press.c	\
 SRCS_MAP			= $(addprefix map/,			$(SRCS_VALIDATION)	\
 												draw_map.c			\
 												init_map.c			\
+												modify_map.c		\
 												read_map.c			\
 												set_map.c			\
 												validate_map_path.c	\
@@ -64,6 +66,7 @@ SRCS_PLAYER			= $(addprefix player/,		$(SRCS_MOVEMENT)	\
 												draw_player.c		\
 												find_player.c		\
 												init_player.c		\
+												kill_player.c		\
 												move_player.c		\
 												set_player.c		\
 												update_player_a.c	\

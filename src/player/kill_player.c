@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_enemy.c                                       :+:      :+:    :+:   */
+/*   kill_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 19:49:28 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/17 14:19:38 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/17 14:14:10 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/17 14:14:16 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "mlx.h"
 
-void	draw_enemy(t_game g)
+void	kill_player(t_game *g)
 {
-	if (g.enemy.status == DEAD)
-	{
-		if (g.frame - g.enemy.frame_dead < 8)
-			mlx_put_image_to_window(g.mlx, g.win, g.assets.enemy[2].img, \
-									g.enemy.pos.x, g.enemy.pos.y);
-	}
-	else
-		mlx_put_image_to_window(g.mlx, g.win, \
-								g.assets.enemy[(g.frame / 8) % 2].img, \
-								g.enemy.pos.x, g.enemy.pos.y);
+	g->player.status = DEAD;
+	g->player.frame_dead = g->frame;
+	g->player.v.y = 0;
+	g->player.remaining = 96;
 }

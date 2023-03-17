@@ -6,14 +6,14 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:06:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 22:42:43 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/17 14:47:08 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "so_long.h"
 
-static void	dead_player(t_game *g)
+static void	animate_dead(t_game *g)
 {
 	if (g->player.status == DEAD)
 	{
@@ -26,9 +26,24 @@ static void	dead_player(t_game *g)
 	}
 }
 
+static void	animate_kill(t_game *g)
+{
+	if (g->player.status != DEAD && g->enemy.status == DEAD)
+	{
+		if (g->frame - g->enemy.frame_dead < 2)
+		{
+			g->key.w = ft_true;
+			g->key.s = ft_false;
+		}
+		else if (g->frame - g->enemy.frame_dead == 2)
+			g->key.w = ft_false;
+	}
+}
+
 void	move_player(t_game *g)
 {
-	dead_player(g);
+	animate_dead(g);
+	animate_kill(g);
 	update_player_a(g);
 	update_player_v(g);
 	update_player_pos(g);

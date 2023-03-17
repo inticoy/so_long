@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:33:32 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 15:20:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/17 15:58:11 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int	set_map(t_game *g, char *map_path)
 		g->map.map = 0;
 		return (0);
 	}
+	modify_map(&g->map);
 	return (1);
 }

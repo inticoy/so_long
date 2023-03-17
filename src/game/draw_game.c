@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:21:17 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 17:28:09 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/17 15:20:18 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	draw_game(t_game g)
 	mlx_clear_window(g.mlx, g.win);
 	draw_map(g);
 	draw_exit(g);
-	draw_player(g);
 	draw_enemy(g);
+	draw_player(g);
 	draw_collectibles(g);
 	display_movement(g, (t_bool)BONUS);
 }
