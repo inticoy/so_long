@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 21:22:20 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/17 15:47:37 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/17 16:26:53 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ static void	update_player_a_y(t_game *g)
 	g->player.a.y = 0;
 	if (g->key.w)
 	{
-		if (g->player.remaining > 0 && -12 < g->player.v.y && g->player.v.y <= 0)
+		if (g->player.remaining > 0 && \
+			-12 < g->player.v.y && g->player.v.y <= 0)
 			g->player.a.y = -8;
 		else if (g->player.remaining > 0 && -12 == g->player.v.y)
 			g->player.a.y = -2;

@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 22:45:21 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 22:45:25 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/17 16:27:19 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	update_player_v(t_game *g)
 {
 	g->player.v.x += g->player.a.x;
-	if (-12 <= g->player.v.y + g->player.a.y && g->player.v.y + g->player.a.y <= 12)
+	if (-12 <= g->player.v.y + g->player.a.y && \
+		g->player.v.y + g->player.a.y <= 12)
 		g->player.v.y += g->player.a.y;
 }
