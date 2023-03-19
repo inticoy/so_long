@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 22:45:12 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/17 16:14:47 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 20:35:01 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,20 @@ static t_bool	check_x_blocked(t_game *g)
 	return (x_blocked);
 }
 
+static void	update_wall(t_game *g, t_point next_y)
+{
+	int	x;
+	int	y;
+
+	x = (next_y.x + 16) / UNIT_X;
+	y = (next_y.y + 4) / UNIT_Y;
+	if (g->map.data[y][x].hit)
+		return ;
+	g->map.data[y][x].hit = ft_true;
+	g->map.data[y][x].frame_hit = g->frame;
+	g->map.data[y][x].offset = init_point(0, 0);
+}
+
 static t_bool	check_y_blocked(t_game *g)
 {
 	t_bool	y_blocked;
@@ -51,6 +65,8 @@ static t_bool	check_y_blocked(t_game *g)
 		y_blocked = ft_true;
 		g->player.remaining = 96;
 	}
+	if ('1' == g->map.map[(next_y.y + 4) / UNIT_Y][(next_y.x + 16) / UNIT_X])
+		update_wall(g, next_y);
 	if (y_blocked)
 		g->player.v.y = 0;
 	return (y_blocked);

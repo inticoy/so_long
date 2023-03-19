@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/19 20:21:55 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/19 20:40:59 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,8 @@ SRCS_MAP			= $(addprefix map/,			$(SRCS_MAP_DATA)	\
 												set_map.c			\
 												validate_map_path.c	\
 												validate_map.c)
-SRCS_MAP_DATA		= $(addprefix data/,		set_map_data.c)
+SRCS_MAP_DATA		= $(addprefix data/,		set_map_data.c		\
+												update_map_data.c)
 SRCS_VALIDATION		= $(addprefix validation/,	has_proper_char.c	\
 												has_valid_route.c	\
 												is_playable.c		\

@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 20:21:00 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 20:40:40 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,6 +226,7 @@ t_bool		validate_map(t_map map);
 
 //			map/data
 void		set_map_data(t_map *map);
+void		update_map_data(t_game *g);
 
 //			map/validation
 t_bool		has_proper_char(t_map map);

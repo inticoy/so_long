@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 20:27:39 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 20:41:20 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	draw_map(t_game g)
 			{
 				mlx_put_image_to_window(g.mlx, g.win, \
 									g.assets.block[g.map.map[y][x] - '0'].img, \
-									UNIT_X * x, UNIT_Y * y);
+									UNIT_X * x, \
+									UNIT_Y * y + g.map.data[y][x].offset.y);
 			}
 			x++;
 		}
