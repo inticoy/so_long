@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/19 22:25:39 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/19 23:11:57 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -143,6 +143,7 @@ $(MLX) :
 	@make -C minilibx -s
 
 %.o : %.c
+	@printf "compiling $<\r"
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE)
 
 clean :
