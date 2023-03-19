@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/19 20:40:59 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/19 21:13:08 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,6 +107,14 @@ LIBFT = libft/libft.a
 
 INCLUDE = ./include
 
+UNAME = $(shell uname -p)
+
+ifeq ($(UNAME), arm)
+	ARM = 1
+else
+	ARM = 0
+endif
+
 ifdef BONUS
     F_OBJS = $(B_OBJS)
 else
@@ -116,7 +124,10 @@ endif
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(MLX) $(F_OBJS)
-	$(CC) $(LEAKFLAGS) -L$(MLX_PATH) -L$(FT_PATH) -framework OpenGL -framework Appkit -lz $(SRCS) -lmlx -lft -I $(INCLUDE) -o $@
+	$(CC) $(LEAKFLAGS) -L$(MLX_PATH) -L$(FT_PATH) \
+		-framework OpenGL -framework Appkit -lz $(SRCS) -lmlx -lft \
+		-I $(INCLUDE) -o $@ \
+		-D ARM=$(ARM)
 
 bonus : 
 	make BONUS=1 all
@@ -131,6 +142,7 @@ $(MLX) :
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE)
 
 clean :
+	@echo $(ARM)
 	$(RM) $(OBJS)
 	$(RM) $(B_OBJS)
 	make -C libft clean

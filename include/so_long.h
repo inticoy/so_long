@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 20:40:40 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 21:14:29 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@
 #  ifdef SO_LONG_BONUS_H
 #   define BONUS 1
 #  endif
+# endif
+
+# ifndef ARM
+#  define ARM 0
 # endif
 
 typedef t_bool					t_pressed;
