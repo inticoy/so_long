@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 15:55:21 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/15 21:35:26 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 21:38:22 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_bool	is_surrounded(t_map map)
 	while (y < map.size.y)
 	{
 		x = 0;
-		while (x < ft_strlen(map.map[y]) - 1)
+		while (x < (int)ft_strlen(map.map[y]) - 1)
 		{
 			if (x == 0 || x == map.size.x - 1 || y == 0 || y == map.size.y - 1)
 				if (map.map[y][x] != '1')

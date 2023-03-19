@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 15:55:19 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 20:26:31 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 21:38:00 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_bool	is_playable(t_map map)
 	while (y < map.size.y)
 	{
 		x = 0;
-		while (x < ft_strlen(map.map[y]) - 1)
+		while (x < (int)ft_strlen(map.map[y]) - 1)
 		{
 			if ((map.map[y])[x] == 'C')
 				ch_count[0]++;

@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 20:26:13 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 20:23:05 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 21:38:33 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ t_map	read_map(char *map_path)
 {
 	int		fd;
 	int		i;
-	char	*line;
 	t_map	map;
 
 	map = init_map();

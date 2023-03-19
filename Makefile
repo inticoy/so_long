@@ -6,15 +6,15 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/19 21:13:08 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/19 22:25:39 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 CC = cc
-# CFLAGS = -Wall -Wextra -Werror
-LEAKFLAGS = -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
+#LEAKFLAGS = -g3 -fsanitize=address
 RM = rm -rf
 
 SRCS_ASSET			= $(addprefix asset/,		read_assets.c)
@@ -124,37 +124,40 @@ endif
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(MLX) $(F_OBJS)
-	$(CC) $(LEAKFLAGS) -L$(MLX_PATH) -L$(FT_PATH) \
-		-framework OpenGL -framework Appkit -lz $(SRCS) -lmlx -lft \
-		-I $(INCLUDE) -o $@ \
-		-D ARM=$(ARM)
+	@$(CC) $(CFLAGS) $(SRCS)	\
+		-L$(MLX_PATH) 		\
+		-L$(FT_PATH) 		\
+		-lmlx -lft			\
+		-framework OpenGL	\
+ 		-framework Appkit 	\
+		-D ARM=$(ARM)		\
+		-I $(INCLUDE) -o $@
 
 bonus : 
 	make BONUS=1 all
 
 $(LIBFT) :
-	make -C libft
+	@make -C libft -s
 
 $(MLX) :
-	make -C minilibx
+	@make -C minilibx -s
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE)
+	@$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE)
 
 clean :
-	@echo $(ARM)
-	$(RM) $(OBJS)
-	$(RM) $(B_OBJS)
-	make -C libft clean
-	make -C minilibx clean
+	@$(RM) $(OBJS)
+	@$(RM) $(B_OBJS)
+	@make -C libft clean
+	@make -C minilibx clean
 
 fclean :
-	make clean
-	$(RM) $(NAME)
-	make -C libft fclean
+	@make clean
+	@$(RM) $(NAME)
+	@make -C libft fclean
 
 re :
-	make fclean
-	make all
+	@make fclean
+	@make all
 
 .PHONY : all bonus clean fclean re
