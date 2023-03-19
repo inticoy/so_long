@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 19:43:36 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 20:21:00 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,10 +114,17 @@ typedef struct s_assets
 	t_image	exit;
 }	t_assets;
 
+typedef struct s_map_data
+{
+	t_bool				hit;
+	unsigned long long	frame_hit;
+	t_point				offset;
+}	t_map_data;
 typedef struct s_map
 {
-	char	**map;
-	t_size	size;
+	char		**map;
+	t_map_data	**data;
+	t_size		size;
 }	t_map;
 
 typedef struct s_collectible
@@ -216,6 +223,9 @@ t_map		read_map(char *map_path);
 int			set_map(t_game *g, char *map_path);
 t_bool		validate_map_path(char *map_path);
 t_bool		validate_map(t_map map);
+
+//			map/data
+void		set_map_data(t_map *map);
 
 //			map/validation
 t_bool		has_proper_char(t_map map);

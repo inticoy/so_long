@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_map.c                                          :+:      :+:    :+:   */
+/*   set_map_data.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 14:33:32 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 20:17:55 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/19 20:15:24 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/19 20:20:23 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "so_long.h"
 
-int	set_map(t_game *g, char *map_path)
+void	set_map_data(t_map *map)
 {
-	if (!validate_map_path(map_path))
-		return (0);
-	g->map = read_map(map_path);
-	if (!validate_map(g->map))
+	int	y;
+
+	map->data = (t_map_data **)ft_calloc(map->size.y, sizeof(t_map_data *));
+	y = 0;
+	while (y < map->size.y)
 	{
-		del_map(&g->map);
-		return (0);
+		map->data[y] = (t_map_data *)ft_calloc(map->size.x, sizeof(t_map_data));
+		y++;
 	}
-	modify_map(&g->map);
-	set_map_data(&g->map);
-	return (1);
 }
