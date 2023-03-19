@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 15:57:28 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/17 16:20:10 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 19:51:05 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,25 @@ static int	change_into_ground(t_map *map)
 	return (ground);
 }
 
-static void	change_into_stair(t_map *map)
+static void	change_into_stair(t_map *map, int ground)
 {
+	int	x;
+	int	y;
+
+	x = 1;
+	while (x < map->size.x - 1)
+	{
+		y = ground;
+		while (y > 0)
+		{
+			if (map->map[y][x] == '1')
+				map->map[y][x] = '2';
+			else
+				break ;
+			y--;
+		}
+		x++;
+	}
 	return ;
 }
 
@@ -71,5 +88,5 @@ void	modify_map(t_map *map)
 
 	change_sky(map);
 	ground = change_into_ground(map);
-	change_into_stair(map);
+	change_into_stair(map, ground);
 }

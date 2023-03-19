@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 19:27:32 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 19:43:36 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,6 +208,7 @@ t_key		init_key(void);
 void		raise_error(char *msg);
 
 //			map
+void		del_map(t_map *map);
 void		draw_map(t_game g);
 t_map		init_map(void);
 void		modify_map(t_map *map);

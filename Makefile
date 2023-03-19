@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/19 19:27:44 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/19 19:43:48 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ SRCS_KEY			= $(addprefix key/,			hook_key_press.c	\
 												hook_key_release.c	\
 												init_key.c)
 SRCS_MAP			= $(addprefix map/,			$(SRCS_VALIDATION)	\
+												del_map.c			\
 												draw_map.c			\
 												init_map.c			\
 												modify_map.c		\

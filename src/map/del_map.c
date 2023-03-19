@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_game.c                                       :+:      :+:    :+:   */
+/*   del_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 16:25:18 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 19:44:47 by gyoon            ###   ########.fr       */
+/*   Created: 2023/03/19 19:42:03 by gyoon             #+#    #+#             */
+/*   Updated: 2023/03/19 19:45:00 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "so_long.h"
-#include <stdlib.h>
 
-void	close_game(t_game *g)
+void	del_map(t_map *map)
 {
-	del_map(&g->map);
-	ft_lstclear(&g->collectibles, ft_free_s);
-	exit(1);
+	int	y;
+
+	y = 0;
+	while (y < map->size.y)
+	{
+		ft_free_s(map->map[y]);
+		y++;
+	}
+	ft_free_s(map->map);
+	map->map = 0;
 }
