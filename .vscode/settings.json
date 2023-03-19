@@ -13,6 +13,9 @@
 		"libft.h": "c",
 		"so_long.h": "c",
 		"fcntl.h": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"functional": "c",
+		"type_traits": "c",
+		"version": "c"
 	}
 }

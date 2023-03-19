@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:46:33 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/17 16:27:08 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 19:26:23 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	draw_player(t_game g)
 	int	status;
 	int	i;
 
+	if (g.clear)
+		return ;
 	if (g.player.status == LEFT)
 		status = 0;
 	else if (g.player.status == RIGHT)

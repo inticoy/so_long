@@ -6,10 +6,11 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:26:47 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 16:11:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 19:24:10 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "so_long.h"
 #include "mlx.h"
 
@@ -18,6 +19,8 @@ t_game	init_game(char *map_path)
 	t_game	g;
 
 	g.frame = 0;
+	g.frame_clear = 0;
+	g.clear = ft_false;
 	g.mlx = mlx_init();
 	g.map_path = map_path;
 	if (!set_map(&g, map_path))

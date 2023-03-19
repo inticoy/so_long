@@ -1,6 +1,6 @@
-path = "../assets/peach/"
-filename = "peach.xpm"
-newfilename = "peach1.xpm"
+path = "../assets/heart/"
+filename = "heart.xpm"
+newfilename = "heart1.xpm"
 
 pixel_from = 16
 pixel_to = 32

@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 19:54:19 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/17 16:13:22 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 17:09:21 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,12 @@ static void	read_characters(void *mlx, t_assets *assets)
 	assets->exit = read_image(mlx, "./assets/peach/stand.xpm");
 }
 
-static void	read_collectibles(void *mlx, t_assets *assets)
+static void	read_items(void *mlx, t_assets *assets)
 {
-	assets->collectible[0] = read_image(mlx, "./assets/coin/0.xpm");
-	assets->collectible[1] = read_image(mlx, "./assets/coin/1.xpm");
-	assets->collectible[2] = read_image(mlx, "./assets/coin/2.xpm");
+	assets->item[0] = read_image(mlx, "./assets/coin/0.xpm");
+	assets->item[1] = read_image(mlx, "./assets/coin/1.xpm");
+	assets->item[2] = read_image(mlx, "./assets/coin/2.xpm");
+	assets->item[3] = read_image(mlx, "./assets/heart/heart.xpm");
 }
 
 t_assets	read_assets(void *mlx)
@@ -63,6 +64,6 @@ t_assets	read_assets(void *mlx)
 
 	read_blocks(mlx, &assets);
 	read_characters(mlx, &assets);
-	read_collectibles(mlx, &assets);
+	read_items(mlx, &assets);
 	return (assets);
 }

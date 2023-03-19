@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:49:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/17 16:27:55 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 19:25:27 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int	run_game(t_game *g)
 			kill_player(g);
 	}
 	update_collectibles(g);
-	if (check_game_clear(g))
-		close_game(g);
+	clear_game(g);
 	draw_game(*g);
 	return (0);
 }

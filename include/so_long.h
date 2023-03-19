@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:52 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/17 16:11:28 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 19:27:32 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ typedef struct s_assets
 {
 	t_image	block[14];
 	t_image	player[3][6];
-	t_image	collectible[5];
+	t_image	item[4];
 	t_image	enemy[3];
 	t_image	exit;
 }	t_assets;
@@ -140,8 +140,10 @@ typedef struct s_key
 
 typedef struct s_game
 {
-	char				*map_path;
 	unsigned long long	frame;
+	unsigned long long	frame_clear;
+	t_bool				clear;
+	char				*map_path;
 	void				*mlx;
 	void				*win;
 	t_size				size;
@@ -187,6 +189,7 @@ void		update_exit_v(t_game *g);
 
 //			game
 t_bool		check_game_clear(t_game *g);
+void		clear_game(t_game *g);
 void		close_game(t_game *g);
 void		draw_game(t_game g);
 t_game		init_game(char *map_path);

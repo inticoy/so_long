@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/17 16:11:36 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/19 19:27:44 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRCS_EXIT			= $(addprefix exit/,		draw_exit.c			\
 												update_exit_pos.c	\
 												update_exit_v.c)
 SRCS_GAME			= $(addprefix game/,		check_game_clear.c	\
+												clear_game.c		\
 												close_game.c		\
 												draw_game.c			\
 												init_game.c			\
