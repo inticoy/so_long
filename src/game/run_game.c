@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:49:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 21:15:00 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 21:29:05 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 
 int	run_game(t_game *g)
 {
+	g->frame++;
 	if (g->key.esc)
 		close_game(g);
 	if (g->key.r \
 		|| (g->player.status == DEAD && (g->frame - g->player.frame_dead > 50)))
 		restart_game(g);
-	g->frame++;
-	if (ARM && g->frame % 2)
-		return (0);
 	move_player(g);
 	move_enemy(g);
 	move_exit(g);
