@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:40:10 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 16:11:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 20:27:15 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	set_collectibles(t_game *g)
 
 	head = FT_NULL;
 	y = 0;
-	while (g->map.map[y])
+	while (y < g->map.size.y)
 	{
 		x = 0;
 		while (x < g->map.size.x)

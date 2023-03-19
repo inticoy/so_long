@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/17 16:25:51 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 20:27:39 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	draw_map(t_game g)
 	int		y;
 
 	y = 0;
-	while (g.map.map[y])
+	while (y < g.map.size.y)
 	{
 		x = 0;
 		while (x < g.map.size.x)

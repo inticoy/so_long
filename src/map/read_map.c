@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 20:26:13 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 13:36:24 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/19 20:23:05 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_map	read_map(char *map_path)
 
 	map = init_map();
 	map.size.y = get_num_line(map_path);
-	map.map = (char **)ft_calloc(map.size.y + 1, sizeof(char *));
+	map.map = (char **)ft_calloc(map.size.y, sizeof(char *));
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
 		return (map);
