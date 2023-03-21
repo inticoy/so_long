@@ -15,7 +15,7 @@ CFLAGS+= -Wno-deprecated-declarations
 all: $(NOM)
 
 $(NOM):	$(OBJ)
-	@ar -r $(NOM) $(OBJ)
+	@ar rc $(NOM) $(OBJ)
 	@ranlib $(NOM)
 
 clean:
