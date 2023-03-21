@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/22 00:14:19 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/22 00:19:05 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -172,10 +172,10 @@ $(NAME) : $(LIBFT) $(MLX) $(OBJS)
  		-framework Appkit 	\
 		-D ARM=$(ARM)		\
 		-I $(INCLUDE) -o $@
-	@printf "\rCompiling... "
+	@printf "\rCompiling source files... "
 	@printf "%.$(shell printf "%d" $(len_done))s" $(bar_done)
 	@printf "%.$(shell printf "%d" $(len_ready))s" $(bar_ready)
-	@printf "% 4.2f%%\n" $(percent)
+	@printf "%7.2f%%\n" $(percent)
 	@printf "🎮 Now you can play ${bold}Super Mario Bros.${end}"
 	@printf " (%s)\n" $(version)
 
@@ -198,11 +198,11 @@ $(MLX) :
 	@$(eval len=$(shell printf "%.0f\n" $(rate_hex)))
 	@$(eval len_done=$(shell printf "scale=0; $(len) * 4" | bc))
 	@$(eval len_ready=$(shell printf "scale=0; 96 - ($(len_done) / 4) * 6" | bc))
-	@$(eval percent=$(shell printf "scale=2; ($(cnt) / $(num_file)) * 100" | bc))
-	@printf "\rCompiling... "
+	@$(eval percent=$(shell printf "scale=4; ($(cnt) / $(num_file)) * 100" | bc))
+	@printf "\rCompiling source files... "
 	@printf "%.$(shell printf "%d" $(len_done))s" $(bar_done)
 	@printf "%.$(shell printf "%d" $(len_ready))s" $(bar_ready)
-	@printf "% 4.2f%%" $(percent)
+	@printf "%7.2f%%" $(percent)
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE)
 
 clean :
