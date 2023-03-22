@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:10:41 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/22 15:30:47 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:44:24 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,7 @@ static void	display_in_window(t_game g)
 
 static void	display_in_shell(t_game g)
 {
-	char	*direction;
-
-	direction = FT_NULL;
-	if (!g.player.v.x && g.player.v.y < 0)
-		direction = "up";
-	else if (!g.player.v.x && g.player.v.y > 0)
-		direction = "down";
-	else if (g.player.v.x < 0 && !g.player.v.y)
-		direction = "left";
-	else if (g.player.v.x > 0 && !g.player.v.y)
-		direction = "right";
-	else if (g.player.v.x < 0 && g.player.v.y < 0)
-		direction = "up-left";
-	else if (g.player.v.x > 0 && g.player.v.y < 0)
-		direction = "up-right";
-	else if (g.player.v.x < 0 && g.player.v.y > 0)
-		direction = "down-left";
-	else if (g.player.v.x > 0 && g.player.v.y > 0)
-		direction = "down-right";
-	ft_printf("%11d move %s\n", g.player.movement, direction);
+	ft_printf("%11d th move\n", g.player.movement);
 }
 
 void	display_movement(t_game g, t_bool bonus)
