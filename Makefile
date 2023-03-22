@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/22 17:08:22 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/22 22:35:50 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ NAME	= so_long
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
-#LEAKFLAGS = -g3 -fsanitize=address
 RM		= rm -rf
 
 ifeq ($(shell uname -p), arm)
@@ -193,11 +192,11 @@ $(MLX) :
 
 %.o : %.c
 	@$(eval cnt=$(shell printf $$(($(cnt)+1))))
-	@$(eval rate_hex=$(shell printf "scale=2; ($(cnt) / $(num_file)) * 16" | bc))
+	@$(eval rate_hex=$(shell echo "scale=2; ($(cnt) / $(num_file)) * 16" | bc))
 	@$(eval len=$(shell printf "%.0f\n" $(rate_hex)))
-	@$(eval len_done=$(shell printf "scale=0; $(len) * 4" | bc))
-	@$(eval len_ready=$(shell printf "scale=0; 96 - ($(len_done) / 4) * 6" | bc))
-	@$(eval percent=$(shell printf "scale=4; ($(cnt) / $(num_file)) * 100" | bc))
+	@$(eval len_done=$(shell echo "scale=0; $(len) * 4" | bc))
+	@$(eval len_ready=$(shell echo "scale=0; 96 - ($(len_done) / 4) * 6" | bc))
+	@$(eval percent=$(shell echo "scale=4; ($(cnt) / $(num_file)) * 100" | bc))
 	@printf "\rCompiling source files... "
 	@printf "%.$(shell printf "%d" $(len_done))s" $(bar_done)
 	@printf "%.$(shell printf "%d" $(len_ready))s" $(bar_ready)
