@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/22 00:19:05 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/22 15:20:40 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -210,14 +210,17 @@ clean :
 	@$(RM) $(B_OBJS)
 	@make -C libft clean
 	@make -C minilibx clean
+	@printf "make clean ${bold}Super Mario Bros.${end}\n"
 
 fclean :
 	@make clean
 	@$(RM) $(NAME)
 	@make -C libft fclean
+	@printf "make fclean ${bold}Super Mario Bros.${end}\n"
 
 re :
 	@make fclean
+	@printf "\n"
 	@make all
 
 .PHONY : all bonus clean fclean re
