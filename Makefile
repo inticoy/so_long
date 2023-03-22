@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/22 15:20:40 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/22 17:08:22 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -173,9 +173,8 @@ $(NAME) : $(LIBFT) $(MLX) $(OBJS)
 		-D ARM=$(ARM)		\
 		-I $(INCLUDE) -o $@
 	@printf "\rCompiling source files... "
-	@printf "%.$(shell printf "%d" $(len_done))s" $(bar_done)
-	@printf "%.$(shell printf "%d" $(len_ready))s" $(bar_ready)
-	@printf "%7.2f%%\n" $(percent)
+	@printf "%.$(shell printf "%d" 64)s" $(bar_done)
+	@printf "%7.2f%%\n" 100
 	@printf "🎮 Now you can play ${bold}Super Mario Bros.${end}"
 	@printf " (%s)\n" $(version)
 

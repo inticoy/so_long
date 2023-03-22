@@ -16,6 +16,7 @@
 		"stdlib.h": "c",
 		"functional": "c",
 		"type_traits": "c",
-		"version": "c"
+		"version": "c",
+		"mlx.h": "c"
 	}
 }

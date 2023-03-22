@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 14:11:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/22 15:31:12 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 17:05:51 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,9 @@ static t_bool	is_directory(char *map_path)
 t_bool	validate_map_path(char *map_path)
 {
 	if (!is_exist(map_path))
-		ft_putstr_fd("PATH ERROR: Map does not exist.\n", STDERR);
+		ft_putstr_fd("error: map does not exist.\n", STDERR);
 	else if (is_directory(map_path))
-		ft_putstr_fd("PATH ERROR: Map must be a file, not directory.\n", \
-					STDERR);
+		ft_putstr_fd("error: map must be a file, not directory.\n", STDERR);
 	else
 		return (ft_true);
 	return (ft_false);

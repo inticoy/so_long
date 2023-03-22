@@ -6,7 +6,7 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:36:54 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/22 15:32:21 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 17:06:11 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	reset_game(t_game *g)
 	g->frame_clear = 0;
 	g->clear = ft_false;
 	if (!set_map(g, g->map_path))
-		raise_error("ERROR\n");
+		raise_error("error\n");
 	set_player(g);
 	set_enemy(g);
 	set_exit(g);
