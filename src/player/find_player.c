@@ -6,12 +6,12 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:25:07 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/15 20:25:49 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:30:39 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "so_long.h"
+#include "libft.h"
 
 t_point	find_player(t_map map)
 {

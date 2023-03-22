@@ -6,12 +6,12 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:10:41 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/16 20:16:18 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:30:47 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "so_long.h"
+#include "libft.h"
 #include "mlx.h"
 
 static void	display_in_window(t_game g)

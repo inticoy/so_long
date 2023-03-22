@@ -6,12 +6,12 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 20:15:24 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 20:20:23 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:32:02 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "so_long.h"
+#include "libft.h"
 
 void	set_map_data(t_map *map)
 {

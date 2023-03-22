@@ -6,12 +6,12 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 15:55:21 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 21:38:22 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:31:44 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "so_long.h"
+#include "libft.h"
 
 t_bool	is_surrounded(t_map map)
 {

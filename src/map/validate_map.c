@@ -6,13 +6,12 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 14:38:59 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/15 21:31:38 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:30:59 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "so_long.h"
-#include "fcntl.h" 
+#include "libft.h"
 
 t_bool	validate_map(t_map map)
 {

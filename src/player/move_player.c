@@ -6,12 +6,12 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:06:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/17 14:47:08 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:30:32 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "so_long.h"
+#include "libft.h"
 
 static void	animate_dead(t_game *g)
 {

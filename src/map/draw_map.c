@@ -6,14 +6,13 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:39 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 20:41:20 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:31:38 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "libft.h"
 #include "mlx.h"
-#include <math.h>
 
 void	draw_map(t_game g)
 {

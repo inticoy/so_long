@@ -6,12 +6,12 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 15:55:14 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/15 21:24:41 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:31:56 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "so_long.h"
+#include "libft.h"
 
 void	traverse_map(t_map map, t_point p)
 {

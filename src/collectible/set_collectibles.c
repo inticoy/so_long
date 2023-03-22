@@ -6,12 +6,12 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:40:10 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/19 20:27:15 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:33:14 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "so_long.h"
+#include "libft.h"
 
 void	set_collectibles(t_game *g)
 {

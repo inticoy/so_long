@@ -6,12 +6,12 @@
 /*   By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 19:42:03 by gyoon             #+#    #+#             */
-/*   Updated: 2023/03/22 00:26:16 by gyoon            ###   ########.fr       */
+/*   Updated: 2023/03/22 15:31:41 by gyoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "so_long.h"
+#include "libft.h"
 
 void	del_map(t_map *map)
 {
