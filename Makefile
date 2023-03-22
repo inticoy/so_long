@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:53:40 by gyoon             #+#    #+#              #
-#    Updated: 2023/03/22 22:35:50 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/22 23:05:58 by gyoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,8 +113,24 @@ SRCS		= $(addprefix src/,			$(asset)		\
 										$(point)		\
 										$(main))
 
+SRCS_BONUS	= $(addprefix src_bonus/,	$(asset)		\
+										$(character)	\
+										$(collectible)	\
+										$(enemy)		\
+										$(error)		\
+										$(exit)			\
+										$(game)			\
+										$(image)		\
+										$(key)			\
+										$(map)			\
+										$(player)		\
+										$(point)		\
+										$(main))
+
+B_OBJS = ${SRCS_BONUS:.c=_bonus.o}
+
 ifdef BONUS
-	OBJS 	= ${SRCS:.c=.o}
+	OBJS 	= ${SRCS_BONUS:.c=_bonus.o}
 else
     OBJS 	= $(SRCS:.c=.o)
 endif
@@ -163,7 +179,7 @@ endif
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(MLX) $(OBJS)
-	@$(CC) $(CFLAGS) $(SRCS)	\
+	@$(CC) $(CFLAGS) $(OBJS)\
 		-L$(MLX_PATH) 		\
 		-L$(FT_PATH) 		\
 		-lmlx -lft			\
