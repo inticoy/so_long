@@ -42,6 +42,12 @@ You need a valid map path for play.
 ./so_long [map path]
 ```
 
+Sample valid maps are in maps/valid/.
+
+```
+./so_long maps/valid/1.ber
+```
+
 ### Valid map
 
 There are six conditions for valid map below.
