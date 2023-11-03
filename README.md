@@ -6,7 +6,7 @@ Imitation of a classic profile-view game, **Super Mario Bros. (Nintendo, 1985)**
 
 ## About this project
 
-<img width="1488" alt="Screenshot 2023-03-24 at 14 01 07" src="https://user-images.githubusercontent.com/55380241/227430722-7769c47a-ba6e-477d-b9f6-c1207eb6ef14.png">
+<img width="1488" alt="Screenshot 2023-11-03 at 14 46 48" src="https://github.com/inticoy/so_long/assets/55380241/6f7aa194-d0f1-42df-9262-e25004a2eed7">
 
 This game is imitation of the game Super Mario Bros. (1985)
 
